@@ -502,7 +502,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
         
                     
                         <span id="busuanzi_container_site_uv" style='display:none'></span>
-                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                        人次
                     
     
             
@@ -542,6 +542,27 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
 
 <div class="progress-bar"></div>
 
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+        var pvcountOffset = 80000;  // 初始化首次数据
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int); // 停止检测
+            }
+        }
+    });
+</script>
+
+
 <script language=javascript>
     function siteTime() {
         window.setTimeout("siteTime()", 1000);
@@ -567,7 +588,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
 
-        var t1 = Date.UTC(2019, 08, 10, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t1 = Date.UTC(2021, 05, 05, 00, 00, 00); 
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -576,7 +597,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
             minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "博客已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+        document.getElementById("sitetime").innerHTML = "博客已运行 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
     } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
     siteTime();
