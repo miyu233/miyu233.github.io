@@ -412,21 +412,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/" target="_blank">2</a></span>
+    <span class="count"><a href="/" target="_blank">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories" target="_blank">1</a></span>
+    <span class="count"><a href="/categories" target="_blank">2</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags" target="_blank">1</a></span>
+    <span class="count"><a href="/tags" target="_blank">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -441,21 +441,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/" target="_blank">2</a></span>
+    <span class="count"><a href="/" target="_blank">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories" target="_blank">1</a></span>
+    <span class="count"><a href="/categories" target="_blank">2</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags" target="_blank">1</a></span>
+    <span class="count"><a href="/tags" target="_blank">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -574,7 +574,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,2],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,3],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -616,7 +616,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Algorithm","value":2}],
+                data: [{"name":"Algorithm","value":2},{"name":"软件工程","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -640,7 +640,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
         xAxis: [
             {
                 type: 'category',
-                data: ["Algorithm"]
+                data: ["Algorithm","PAT","设计模式","软件工程"]
             }
         ],
         yAxis: [
@@ -653,7 +653,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [2],
+                data: [2,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -765,6 +765,24 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
             </a>
             
             
+            
+            <a href="/tags/PAT/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">PAT</span>
+            </a>
+            
+            
+            
+            <a href="/tags/设计模式/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">设计模式</span>
+            </a>
+            
+            
+            
+            <a href="/tags/软件工程/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">软件工程</span>
+            </a>
+            
+            
         </div>
     </div>
       -->
@@ -840,7 +858,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">13.7k</span> 字
+                <span class="white-color">19.1k</span> 字
             
 
             
@@ -978,10 +996,6 @@ $(function () {
 
         <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
         
-            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
-            <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-            <script type="text/javascript" src="/js/fireworks.js"></script>
-        
 
         <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
         
@@ -1028,13 +1042,6 @@ $(function () {
         
 
         <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
-        
-            <script type="text/javascript">
-            var windowWidth = $(window).width();
-            if (windowWidth > 992) {
-                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
-            }
-            </script>
         
 
         <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->

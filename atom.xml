@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yipeng.xyz/"/>
-  <updated>2021-05-07T14:44:20.737Z</updated>
+  <updated>2021-05-24T04:00:44.114Z</updated>
   <id>https://yipeng.xyz/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>设计模式模板</title>
+    <link href="https://yipeng.xyz/2021/05/24/she-ji-mo-shi-mo-ban/"/>
+    <id>https://yipeng.xyz/2021/05/24/she-ji-mo-shi-mo-ban/</id>
+    <published>2021-05-24T03:53:28.000Z</published>
+    <updated>2021-05-24T04:00:44.114Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;致谢&quot;&gt;&lt;a href=&quot;#致谢&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件工程" scheme="https://yipeng.xyz/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+      <category term="设计模式" scheme="https://yipeng.xyz/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="软件工程" scheme="https://yipeng.xyz/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PAT真题总结</title>
     <link href="https://yipeng.xyz/2021/05/05/pat-zhen-ti-zong-jie/"/>
     <id>https://yipeng.xyz/2021/05/05/pat-zhen-ti-zong-jie/</id>
     <published>2021-05-05T15:59:59.000Z</published>
-    <updated>2021-05-07T14:44:20.737Z</updated>
+    <updated>2021-05-24T04:00:23.101Z</updated>
     
     <summary type="html">
     
@@ -39,6 +67,8 @@
     
     
       <category term="Algorithm" scheme="https://yipeng.xyz/tags/Algorithm/"/>
+    
+      <category term="PAT" scheme="https://yipeng.xyz/tags/PAT/"/>
     
   </entry>
   
