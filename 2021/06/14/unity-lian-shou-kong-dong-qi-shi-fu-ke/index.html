@@ -502,12 +502,12 @@ Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2）�
                                 <span class="chip bg-color">Unity</span>
                             </a>
                         
-                            <a href="/tags/HollowKnight/" target="_blank">
-                                <span class="chip bg-color">HollowKnight</span>
-                            </a>
-                        
                             <a href="/tags/Zeal/" target="_blank">
                                 <span class="chip bg-color">Zeal</span>
+                            </a>
+                        
+                            <a href="/tags/HollowKnight/" target="_blank">
+                                <span class="chip bg-color">HollowKnight</span>
                             </a>
                         
                             <a href="/tags/序列化/" target="_blank">
@@ -548,14 +548,14 @@ Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2）�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.7k
+                        4.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        17 分
+                        16 分
                     </div>
                     
                 
@@ -580,10 +580,10 @@ Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2）�
 <p>还有一个缺点就是丑，不过可以通过自己写css代码导入来美化。</p>
 <h1 id="使用序列化的方法存储和加载游戏"><a href="#使用序列化的方法存储和加载游戏" class="headerlink" title="使用序列化的方法存储和加载游戏"></a>使用序列化的方法存储和加载游戏</h1><p>游戏存档和读档的原理就是将游戏进行的数据保存在一个文件中。当重新载入游戏时，会首先读取这个文件，然后根据文件的数据动态创建游戏内容，让玩家得以从上次结束的地方重新开始。这给人的感觉就像是机器记住了游戏内容，其实并不，机器只是记住了一个游戏内容清单而已。</p>
 <h2 id="什么是序列化和反序列化"><a href="#什么是序列化和反序列化" class="headerlink" title="什么是序列化和反序列化"></a>什么是序列化和反序列化</h2><p>使用序列化需要添加头文件：</p>
-<pre class="line-numbers language-c#"><code class="language-c#">using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;   //储存2进制文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">using System<span class="token punctuation">.</span>IO<span class="token punctuation">;</span>
+using System<span class="token punctuation">.</span>Runtime<span class="token punctuation">.</span>Serialization<span class="token punctuation">.</span>Formatters<span class="token punctuation">.</span>Binary<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//储存2进制文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li><p>序列化：将对象转化成为字节流，如下图所示，对象可以是Unity中任意脚本或文件，事实上，当创建一个 MonoBehaviour 脚本时，Unity 会通过序列化/反序列化将文件转换成 C++ 代码，然后变成你在检查器窗口中看见的 C# 代码。 </p>
+<li><p>序列化：将对象转化成为字节流，如下图所示，对象可以是Unity中任意脚本或文件，事实上，当创建一个 MonoBehaviour 脚本时，Unity 会通过序列化/反序列化将文件转换成 C++ 代码，然后变成你在检查器窗口中看见的 c# 代码。 </p>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://koenig-media.raywenderlich.com/uploads/2017/06/SerializationIllustration.png" alt="img"> </p>
 </li>
 <li><p>反序列化：序列化的反面，将一个字节流转换成对象。</p>
@@ -598,66 +598,66 @@ using System.Runtime.Serialization.Formatters.Binary;   //储存2进制文件<sp
 <h2 id="对象池的实现"><a href="#对象池的实现" class="headerlink" title="对象池的实现"></a>对象池的实现</h2><p>该对象池的实现需要新建两个脚本：对象和池。</p>
 <ul>
 <li><p><strong>ShadowSprite（对象）</strong>：这个脚本用于控制Shadow对象的参数，例如不透明度，消失时间等等：</p>
-<pre class="line-numbers language-C#"><code class="language-C#">[Header("时间控制参数")]
-public float activeTime;//显示时间
-public float activeStart; //开始显示的时间点
+<pre class="line-numbers language-java"><code class="language-java"><span class="token punctuation">[</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token string">"时间控制参数"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">float</span> activeTime<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//显示时间</span>
+<span class="token keyword">public</span> <span class="token keyword">float</span> activeStart<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//开始显示的时间点</span>
 
-[Header("不透明度控制")]
-public float alpha;
-public float alphaSet; //初始值
-public float alphaMultiplier;   //递减参数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">[</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token string">"不透明度控制"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">float</span> alpha<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">float</span> alphaSet<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//初始值</span>
+<span class="token keyword">public</span> <span class="token keyword">float</span> alphaMultiplier<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//递减参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>起始时要获取Player的Sprite，位置，大小和旋转角度（最后这个好像也无所谓，毕竟固定z轴）。</li>
 </ul>
-<pre class="line-numbers language-C#"><code class="language-C#">private void OnEnable() {
-    player = GameObject.FindGameObjectWithTag("Player").transform;
-    thisSprite = GetComponent<SpriteRenderer>();
-    playerSprite = player.GetComponent<SpriteRenderer>();
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">OnEnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    player <span class="token operator">=</span> GameObject<span class="token punctuation">.</span><span class="token function">FindGameObjectWithTag</span><span class="token punctuation">(</span><span class="token string">"Player"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>transform<span class="token punctuation">;</span>
+    thisSprite <span class="token operator">=</span> GetComponent<span class="token operator">&lt;</span>SpriteRenderer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    playerSprite <span class="token operator">=</span> player<span class="token punctuation">.</span>GetComponent<span class="token operator">&lt;</span>SpriteRenderer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    alpha = alphaSet;
+    alpha <span class="token operator">=</span> alphaSet<span class="token punctuation">;</span>
 
-    thisSprite.sprite = playerSprite.sprite;    //拿到player的sprite
+    thisSprite<span class="token punctuation">.</span>sprite <span class="token operator">=</span> playerSprite<span class="token punctuation">.</span>sprite<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//拿到player的sprite</span>
 
-    transform.position = player.position;   //位置，省略this
-    transform.localScale = player.localScale;   //大小
-    transform.rotation = player.rotation;   //角度
+    transform<span class="token punctuation">.</span>position <span class="token operator">=</span> player<span class="token punctuation">.</span>position<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//位置，省略this</span>
+    transform<span class="token punctuation">.</span>localScale <span class="token operator">=</span> player<span class="token punctuation">.</span>localScale<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//大小</span>
+    transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> player<span class="token punctuation">.</span>rotation<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//角度</span>
 
-    activeStart = Time.time;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    activeStart <span class="token operator">=</span> Time<span class="token punctuation">.</span>time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>在Update中检测时间，如果到达activeTime，则返回对象池</li>
 </ul>
-<pre class="line-numbers language-c#"><code class="language-c#">if (Time.time > activeStart + activeTime) {
-    //返回对象池
-    ShadowPool.instance.ReturnPool(this.gameObject);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>Time<span class="token punctuation">.</span>time <span class="token operator">></span> activeStart <span class="token operator">+</span> activeTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//返回对象池</span>
+    ShadowPool<span class="token punctuation">.</span>instance<span class="token punctuation">.</span><span class="token function">ReturnPool</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>gameObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><strong>ShadowPool（对象池）：</strong></p>
 <ul>
-<li><p>采用队列储存对象，因为残影的特点是先出现的先到达activeTime，所以它会先回到对象池中，下面是c#定义队列的代码：</p>
+<li><p>采用队列储存对象，因为残影的特点是先出现的先到达activeTime，所以它会先回到对象池中，下面是java定义队列的代码：</p>
 <ul>
 <li><strong>Count</strong>获取队列长度</li>
 <li><strong>Enqueue()</strong>进入队列</li>
 <li><strong>Dequeue()</strong>弹出队列</li>
 </ul>
-<pre class="line-numbers language-c#"><code class="language-c#">private Queue<GameObject> availableObjects = new Queue<GameObject>();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> Queue<span class="token operator">&lt;</span>GameObject<span class="token operator">></span> availableObjects <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token operator">&lt;</span>GameObject<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>对象池的核心是提供对象的调用和返回，区别于普通的对象创建和删除，这里的调用和返回是通过<strong>SetActive</strong>实现：</p>
-<pre class="line-numbers language-c#"><code class="language-c#">public void ReturnPool(GameObject obj) {
-    obj.SetActive(false);
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ReturnPool</span><span class="token punctuation">(</span>GameObject obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    obj<span class="token punctuation">.</span><span class="token function">SetActive</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    availableObjects.Enqueue(obj);
-}
+    availableObjects<span class="token punctuation">.</span><span class="token function">Enqueue</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-public GameObject GetFromPool() {
-    if (availableObjects.Count == 0) FillPool();
+<span class="token keyword">public</span> GameObject <span class="token function">GetFromPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>availableObjects<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">FillPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    var outShadow = availableObjects.Dequeue();
+    var outShadow <span class="token operator">=</span> availableObjects<span class="token punctuation">.</span><span class="token function">Dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    outShadow.SetActive(true);
+    outShadow<span class="token punctuation">.</span><span class="token function">SetActive</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    return outShadow;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> outShadow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>if (availableObjects.Count == 0) FillPool();</code></p>
 <p>如果对象池空了，那么就扩容。</p>
 </li>
@@ -665,6 +665,13 @@ public GameObject GetFromPool() {
 </li>
 </ul>
 <p>​    </p>
+<h1 id="Unity游戏开发的合作模式"><a href="#Unity游戏开发的合作模式" class="headerlink" title="Unity游戏开发的合作模式"></a>Unity游戏开发的合作模式</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>准备阶段要做的工作很重要。</p>
+<p>需要一个主程将功能点清晰独立的分开，定义好global变量。如果正规，画好类图、流程图、计划好各功能模块之间的接口。</p>
+<p>搭建好场景，规定并且在Unity中配置好Layer和Tags，安装好要使用的Package。整理<strong>好项目文件，规定命名规则和使用规则</strong>。脚本，AudioMix，动画机等等必须按照功能分文件存储。</p>
+<p>主程配置好项目后应该将项目文件分发给组员，组员在Unity Hub中导入该项目文件，在新电脑上Unity会自动完成上述配置。这种方式能确保没有遗漏。</p>
+<p>规定当完成一个GameObject的配置时，将其放入Prefabs文件夹中供其他人使用。</p>
+<h2 id="如何导入"><a href="#如何导入" class="headerlink" title="如何导入"></a>如何导入</h2><p> <strong>不同的程序员不要同时操作Unity的同一个Scene</strong>。项目合并可以通过Import Package和Export Package来完成。Import和Export会自动识别并合并项目中不同的文件，如果同名则新文件会覆盖旧文件。所以最好成员都在自己的Scene中工作。</p>
+<p>代码冲突需要借助其他冲突解决工具进行逐行Merge，不能使用上述功能。</p>
 <h1 id="4月1日"><a href="#4月1日" class="headerlink" title="4月1日"></a>4月1日</h1><h2 id="Input修改"><a href="#Input修改" class="headerlink" title="Input修改"></a>Input修改</h2><ul>
 <li>通过<strong>Edit</strong> - <strong>Project Setting</strong> 可以修改Input绑定的值</li>
 </ul>
@@ -709,15 +716,8 @@ public GameObject GetFromPool() {
 <li>修复了主角在空中攻击时二段跳无法切换二段跳动画的bug</li>
 <li>修复了在空中可能出现WalkStart的动画的bug</li>
 </ul>
-<h1 id="6月2日"><a href="#6月2日" class="headerlink" title="6月2日"></a>6月2日</h1><h2 id="实用的工具Zeal-1"><a href="#实用的工具Zeal-1" class="headerlink" title="实用的工具Zeal"></a>实用的工具Zeal</h2><p><a href="https://zealdocs.org/" target="_blank" rel="noopener">Zeal的官网</a></p>
-<p>Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2），最大的好处是不需要联网，能随时查看（拯救断网大学生），查询速度也很快，对比很多服务器在国外的文档真的能节省很多时间。</p>
-<p>以我用它来查unity3d的api文档的体验来说，比官网好太多了。</p>
-<p>此外绝大部分语言的API都可以查询，你就不需要在网页上开那么窗口了，浏览器可以解放出来查询一些比较有价值的问题（当一个程序员解决了一个bug时.gif）。</p>
-<p>缺点也是有的，最大的缺点就是只有英文，需要一定的英语阅读能力，可能代码写着写着就一转背单词了，建议搭配查词软件一起使用，不要翻译一整句话，遇到不会的单词再翻译而后自己理解，既学到了单词又保证了效率。</p>
-<p>还有一个缺点就是丑，不过可以通过自己写css代码导入来美化。</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>首先在<strong>Docsets</strong>安装具体的文档（文档还挺大的，安装之前最好先在<strong>Preference</strong>改一下安装地址，默认是安装在C盘的）。安装好之后可以看到自己目前可使用的文档，在左侧就可以进行查询了。</p>
-<p>查询会返回所有文档的所有结果，如果想要针对某一个文档进行搜索的话，需要加上该文档名称前缀，例如<code>unity3d:Blend trees</code>。</p>
-<h2 id="如何实现技能冷却的UI设置"><a href="#如何实现技能冷却的UI设置" class="headerlink" title="如何实现技能冷却的UI设置"></a>如何实现技能冷却的UI设置</h2><p>在Image中选择<strong>Filled</strong>的Image Type，其中有一个选项叫做<strong>Fill Amout</strong>，这个选项可以实现让一张Image按选定的方式加载。<strong>Fill Method</strong>中选定加载方式，以<strong>Radial 360</strong>为例子（扇形加载）实现Dash技能的CD图标。</p>
+<h1 id="6月2日"><a href="#6月2日" class="headerlink" title="6月2日"></a>6月2日</h1><h2 id="如何实现技能冷却的UI设置"><a href="#如何实现技能冷却的UI设置" class="headerlink" title="如何实现技能冷却的UI设置"></a>如何实现技能冷却的UI设置</h2><p>在Image中选择<strong>Filled</strong>的Image Type，其中有一个选项叫做<strong>Fill Amout</strong>，这个选项可以实现让一张Image按选定的方式加载。<strong>Fill Method</strong>中选定加载方式，以<strong>Radial 360</strong>为例子（扇形加载）实现Dash技能的CD图标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://qtld4j27t.hd-bkt.clouddn.com/1622619199466.png" alt="1622619199466"></p>
 <ul>
 <li><p>在UI中新建一张image，Source image中选择一张图片</p>
 </li>
@@ -726,49 +726,47 @@ public GameObject GetFromPool() {
 <li><p>对于该子image，image type选<strong>Filled</strong>，Method选<strong>Horizontal</strong>，Fill Origin选择<strong>Left</strong>， <strong>初始的Fill Amout改为0，表示技能可用</strong></p>
 </li>
 <li><p>在脚本中新建一个Image对象，将父image拖拽，在Update中写上一句核心代码（记住就好）：</p>
-<pre class="line-numbers language-c#"><code class="language-c#">cdImage.fillAmount -= 1.0f / dashCoolDown * Time.deltaTime;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">cdImage<span class="token punctuation">.</span>fillAmount <span class="token operator">-=</span> <span class="token number">1.0f</span> <span class="token operator">/</span> dashCoolDown <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>dashCoolDown表示冷却时间，该冷却条会在dashCoolDown时间内加载完成</p>
 </li>
 </ul>
 <h1 id="6月5日"><a href="#6月5日" class="headerlink" title="6月5日"></a>6月5日</h1><h2 id="实现键盘按键轻重控制跳跃高低的功能"><a href="#实现键盘按键轻重控制跳跃高低的功能" class="headerlink" title="实现键盘按键轻重控制跳跃高低的功能"></a>实现键盘按键轻重控制跳跃高低的功能</h2><p>思路是取一个指标衡量按键轻重，通过这个值的变化来控制跳跃高低。</p>
 <p>这个指标可以是<strong>按键时间长短</strong>。这样需要注意的一个问题是：时长的统计不应该在按键松开时完成，而必须<strong>时刻判断当前距离按下跳跃键那个时刻过去了多久</strong>，如果Player的跳跃只有在松开时才进行那么会十分影响手感。</p>
-<pre class="line-numbers language-C#"><code class="language-C#">if (Input.GetKeyDown(KeyCode.Space)) {
-    jumpStartTime = Time.time;
-}
-if (Input.GetKey(KeyCode.Space)) {
-    jumpTimer = Time.time - jumpStartTime;
-    if (rb.gravityScale > 1.5) {
-        rb.gravityScale -= jumpTimer * 2;
-        if (rb.gravityScale < 1.5) {
-            rb.gravityScale = 1.5f;
-        }
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetKeyDown</span><span class="token punctuation">(</span>KeyCode<span class="token punctuation">.</span>Space<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    jumpStartTime <span class="token operator">=</span> Time<span class="token punctuation">.</span>time<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetKey</span><span class="token punctuation">(</span>KeyCode<span class="token punctuation">.</span>Space<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    jumpTimer <span class="token operator">=</span> Time<span class="token punctuation">.</span>time <span class="token operator">-</span> jumpStartTime<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>rb<span class="token punctuation">.</span>gravityScale <span class="token operator">></span> <span class="token number">1.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        rb<span class="token punctuation">.</span>gravityScale <span class="token operator">-=</span> jumpTimer <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>rb<span class="token punctuation">.</span>gravityScale <span class="token operator">&lt;</span> <span class="token number">1.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            rb<span class="token punctuation">.</span>gravityScale <span class="token operator">=</span> <span class="token number">1.5f</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>目前采取的是控制重力的方式来控制跳跃力度，确实能实现功能，但是效果并不理想，高低的区分度不大，同时也会延长下落的时间，距离空洞骑士那种平滑的跳跃和下落还差的远。</p>
 <p><strong>控制加速度</strong>可能是个更好的选择。</p>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><pre class="line-numbers language-c#"><code class="language-c#">//用于记录按下跳跃键长短，控制跳跃高度
-void MidAirJump() {
-    if (Input.GetKeyDown(KeyCode.Space)) {
-        jumpStartTime = Time.time;
-    }
-    if (Input.GetKey(KeyCode.Space)) {
-        jumpTimer = Time.time - jumpStartTime;
-        if (jumpTimer < 0.1f && jumpTimer > 0.05f) {
-            rb.AddForce(new Vector2(0f, jumpHoldForce), ForceMode2D.Impulse);
-        }
-    }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//用于记录按下跳跃键长短，控制跳跃高度</span>
+<span class="token keyword">void</span> <span class="token function">MidAirJump</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetKeyDown</span><span class="token punctuation">(</span>KeyCode<span class="token punctuation">.</span>Space<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        jumpStartTime <span class="token operator">=</span> Time<span class="token punctuation">.</span>time<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetKey</span><span class="token punctuation">(</span>KeyCode<span class="token punctuation">.</span>Space<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        jumpTimer <span class="token operator">=</span> Time<span class="token punctuation">.</span>time <span class="token operator">-</span> jumpStartTime<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>jumpTimer <span class="token operator">&lt;</span> <span class="token number">0.1f</span> <span class="token operator">&amp;&amp;</span> jumpTimer <span class="token operator">></span> <span class="token number">0.05f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            rb<span class="token punctuation">.</span><span class="token function">AddForce</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vector2</span><span class="token punctuation">(</span><span class="token number">0f</span><span class="token punctuation">,</span> jumpHoldForce<span class="token punctuation">)</span><span class="token punctuation">,</span> ForceMode2D<span class="token punctuation">.</span>Impulse<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>将控制重力修改成了添加加速度，AddForce中填入一个二维的向量，分别表示在水平和竖直方向添加的加速度。ForceMode2D.Impulse是一种添加力的模式，这种模式的力就像是突然出现的一样。</p>
 <p><code>jumpTimer &gt; 0.5f</code>的原因是防止玩家不断地小按跳跃键，这样会导致Player可以不断获得一个向上的力，超越了二段跳。</p>
 <h1 id="6月7日"><a href="#6月7日" class="headerlink" title="6月7日"></a>6月7日</h1><h2 id="使用序列化的方法存储和加载游戏-1"><a href="#使用序列化的方法存储和加载游戏-1" class="headerlink" title="使用序列化的方法存储和加载游戏"></a>使用序列化的方法存储和加载游戏</h2><p>游戏存档和读档的原理就是将游戏进行的数据保存在一个文件中。当重新载入游戏时，会首先读取这个文件，然后根据文件的数据动态创建游戏内容，让玩家得以从上次结束的地方重新开始。这给人的感觉就像是机器记住了游戏内容，其实并不，机器只是记住了一个游戏内容清单而已。</p>
 <h3 id="1-什么是序列化和反序列化"><a href="#1-什么是序列化和反序列化" class="headerlink" title="1 什么是序列化和反序列化"></a>1 什么是序列化和反序列化</h3><p>使用序列化需要添加头文件：</p>
-<pre class="line-numbers language-c#"><code class="language-c#">using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;   //储存2进制文件
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">using System<span class="token punctuation">.</span>IO<span class="token punctuation">;</span>
+using System<span class="token punctuation">.</span>Runtime<span class="token punctuation">.</span>Serialization<span class="token punctuation">.</span>Formatters<span class="token punctuation">.</span>Binary<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//储存2进制文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li><p>序列化：将对象转化成为字节流，如下图所示，对象可以是Unity中任意脚本或文件，事实上，当创建一个 MonoBehaviour 脚本时，Unity 会通过序列化/反序列化将文件转换成 C++ 代码，然后变成你在检查器窗口中看见的 C# 代码。 </p>
+<li><p>序列化：将对象转化成为字节流，如下图所示，对象可以是Unity中任意脚本或文件，事实上，当创建一个 MonoBehaviour 脚本时，Unity 会通过序列化/反序列化将文件转换成 C++ 代码，然后变成你在检查器窗口中看见的 java 代码。 </p>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://koenig-media.raywenderlich.com/uploads/2017/06/SerializationIllustration.png" alt="img"> </p>
 </li>
 <li><p>反序列化：序列化的反面，将一个字节流转换成对象。</p>
@@ -778,111 +776,97 @@ using System.Runtime.Serialization.Formatters.Binary;   //储存2进制文件
 </ul>
 <h3 id="2-游戏存档"><a href="#2-游戏存档" class="headerlink" title="2 游戏存档"></a>2 游戏存档</h3><p>新建一个游戏存档类GameData，取消MonoBehaviour继承。这个类用于存放游戏载入时应该加载的东西，即为前言所述<strong>游戏内容清单</strong>。</p>
 <p>有一句非常重要的代码<code>[System.Serializable]</code>需要添加在类声明之上。这是一个属性，它标明了代码的一个元数据。<strong>它告诉 Unity 这个类可以被序列化</strong>，这意味着你可以将它转换成字节流并保存到磁盘文件中。 </p>
-<pre class="line-numbers language-C#"><code class="language-C#">[System.Serializable]
-public class GameData
-{
-    public Vector3 playerTransform;    //玩家位置
-    //public List<Transform> enemyTransfrom = new List<Transform>();   //敌人位置
-    public int lifePoint;   //玩家生命值
-    public string gameTime; //玩家游戏时间，形如 00h00m00s
-    public int gameSec;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token punctuation">[</span>System<span class="token punctuation">.</span>Serializable<span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GameData</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Vector3 playerTransform<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//玩家位置</span>
+    <span class="token comment" spellcheck="true">//public List&lt;Transform> enemyTransfrom = new List&lt;Transform>();   //敌人位置</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> lifePoint<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//玩家生命值</span>
+    <span class="token keyword">public</span> string gameTime<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//玩家游戏时间，形如 00h00m00s</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> gameSec<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-游戏保存"><a href="#3-游戏保存" class="headerlink" title="3 游戏保存"></a>3 游戏保存</h3><p>新建一个GameSave类，这个类提供一个静态方法<strong>SaveGame()</strong>，静态保证可以在其他类中调用。</p>
-<pre class="line-numbers language-c#"><code class="language-c#">public class GameSave : MonoBehaviour
-{
-    static public void SaveGame() {
-        GameData gameData = new GameData();
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GameSave</span> <span class="token operator">:</span> MonoBehaviour
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">SaveGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        GameData gameData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GameData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        string path = Application.persistentDataPath + "/game_saveData";
+        string path <span class="token operator">=</span> Application<span class="token punctuation">.</span>persistentDataPath <span class="token operator">+</span> <span class="token string">"/game_saveData"</span><span class="token punctuation">;</span>
 
-        //判断目录是否存在，不存在则创建
-        if (!Directory.Exists(path)) {
-            Directory.CreateDirectory(path);
-        }
-        BinaryFormatter bf = new BinaryFormatter();  //二进制化
-        FileStream file = File.Create(path + "/gameData.txt");
+        <span class="token comment" spellcheck="true">//判断目录是否存在，不存在则创建</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Directory<span class="token punctuation">.</span><span class="token function">Exists</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Directory<span class="token punctuation">.</span><span class="token function">CreateDirectory</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        BinaryFormatter bf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BinaryFormatter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//二进制化</span>
+        FileStream file <span class="token operator">=</span> File<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span>path <span class="token operator">+</span> <span class="token string">"/gameData.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //获取数据
-        PlayerController data = GameObject.Find("Knight").GetComponent<PlayerController>();
-        gameData.lifePoint = data.lifePoint;
-        float x = data.transform.position.x;
-        float y = data.transform.position.y;
-        float z = data.transform.position.z;
-        gameData.playerTransform = new Vector3(x, y, z);
-        gameData.gameTime = data.gameTime;
-        gameData.gameSec = data.gameSec;
+        <span class="token comment" spellcheck="true">//获取数据</span>
+        PlayerController data <span class="token operator">=</span> GameObject<span class="token punctuation">.</span><span class="token function">Find</span><span class="token punctuation">(</span><span class="token string">"Knight"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>GetComponent<span class="token operator">&lt;</span>PlayerController<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gameData<span class="token punctuation">.</span>lifePoint <span class="token operator">=</span> data<span class="token punctuation">.</span>lifePoint<span class="token punctuation">;</span>
+        <span class="token keyword">float</span> x <span class="token operator">=</span> data<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+        <span class="token keyword">float</span> y <span class="token operator">=</span> data<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+        <span class="token keyword">float</span> z <span class="token operator">=</span> data<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+        gameData<span class="token punctuation">.</span>playerTransform <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gameData<span class="token punctuation">.</span>gameTime <span class="token operator">=</span> data<span class="token punctuation">.</span>gameTime<span class="token punctuation">;</span>
+        gameData<span class="token punctuation">.</span>gameSec <span class="token operator">=</span> data<span class="token punctuation">.</span>gameSec<span class="token punctuation">;</span>
 
-        //将二进制文件保存为JSON，使用二进制查看软件打开可看到具体数据
-        var json = JsonUtility.ToJson(gameData);
+        <span class="token comment" spellcheck="true">//将二进制文件保存为JSON，使用二进制查看软件打开可看到具体数据</span>
+        var json <span class="token operator">=</span> JsonUtility<span class="token punctuation">.</span><span class="token function">ToJson</span><span class="token punctuation">(</span>gameData<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        bf.Serialize(file, json);    //将二进制数据写入文件
-        file.Close();
-    }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        bf<span class="token punctuation">.</span><span class="token function">Serialize</span><span class="token punctuation">(</span>file<span class="token punctuation">,</span> json<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//将二进制数据写入文件</span>
+        file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-游戏读取"><a href="#3-游戏读取" class="headerlink" title="3 游戏读取"></a>3 游戏读取</h3><p>新建一个游戏读取类GameLoad，提供一个静态方法<strong>LoadGame()</strong>，返回值是GameData类型，如果无数据则返回null。</p>
-<pre class="line-numbers language-c#"><code class="language-c#">public class GameLoad : MonoBehaviour
-{
-    static public GameData LoadGame() {
-        GameData gameData = new GameData();
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GameLoad</span> <span class="token operator">:</span> MonoBehaviour
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">public</span> GameData <span class="token function">LoadGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        GameData gameData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GameData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        BinaryFormatter bf = new BinaryFormatter();
+        BinaryFormatter bf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BinaryFormatter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        string path = Application.persistentDataPath + "/game_saveData/gameData.txt";
-        if (File.Exists(path)) {
-            FileStream file = File.Open(path, FileMode.Open);
-            JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), gameData);
-            file.Close();
-            return gameData;
-        }
-        return null;
-    }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Unity游戏开发的合作模式"><a href="#Unity游戏开发的合作模式" class="headerlink" title="Unity游戏开发的合作模式"></a>Unity游戏开发的合作模式</h2><h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1 准备工作"></a>1 准备工作</h3><p>准备阶段要做的工作很重要。</p>
-<p>需要一个主程将功能点清晰独立的分开，定义好global变量。如果正规，画好类图、流程图、计划好各功能模块之间的接口。</p>
-<p>搭建好场景，规定并且在Unity中配置好Layer和Tags，安装好要使用的Package。整理<strong>好项目文件，规定命名规则和使用规则</strong>。脚本，AudioMix，动画机等等必须按照功能分文件存储。</p>
-<p>主程配置好项目后应该将项目文件分发给组员，组员在Unity Hub中导入该项目文件，在新电脑上Unity会自动完成上述配置。这种方式能确保没有遗漏。</p>
-<p>规定当完成一个GameObject的配置时，将其放入Prefabs文件夹中供其他人使用。</p>
-<h3 id="2-如何导入"><a href="#2-如何导入" class="headerlink" title="2 如何导入"></a>2 如何导入</h3><p> <strong>不同的程序员不要同时操作Unity的同一个Scene</strong>。项目合并可以通过Import Package和Export Package来完成。Import和Export会自动识别并合并项目中不同的文件，如果同名则新文件会覆盖旧文件。所以最好成员都在自己的Scene中工作。</p>
-<p>代码冲突需要借助其他冲突解决工具进行逐行Merge，不能使用上述功能。</p>
+        string path <span class="token operator">=</span> Application<span class="token punctuation">.</span>persistentDataPath <span class="token operator">+</span> <span class="token string">"/game_saveData/gameData.txt"</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>File<span class="token punctuation">.</span><span class="token function">Exists</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            FileStream file <span class="token operator">=</span> File<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> FileMode<span class="token punctuation">.</span>Open<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            JsonUtility<span class="token punctuation">.</span><span class="token function">FromJsonOverwrite</span><span class="token punctuation">(</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span>bf<span class="token punctuation">.</span><span class="token function">Deserialize</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> gameData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> gameData<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="存档读档时游戏时长的控制"><a href="#存档读档时游戏时长的控制" class="headerlink" title="存档读档时游戏时长的控制"></a>存档读档时游戏时长的控制</h2><p>最开始只在GameData中储存了一个string变量gameTIme，里面存放的是格式化后的游戏时间，形如 <strong>00h00m00s</strong>。</p>
 <p>出现的问题是，重新保存存档时，势必要知道上一次存档时的游戏时间，虽然可以用gameTime再转换回去，但是显然多存储一个总时间秒数更方便，于是又添加了一个int型变量gameSec。</p>
-<pre class="line-numbers language-C#"><code class="language-C#">[System.Serializable]
-public class GameData
-{
-    public Vector3 playerTransform;    //玩家位置
-    //public List<Transform> enemyTransfrom = new List<Transform>();   //敌人位置
-    public int lifePoint;   //玩家生命值
-    public string gameTime; //玩家游戏时间，形如 00h00m00s
-    public int gameSec;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token punctuation">[</span>System<span class="token punctuation">.</span>Serializable<span class="token punctuation">]</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GameData</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Vector3 playerTransform<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//玩家位置</span>
+    <span class="token comment" spellcheck="true">//public List&lt;Transform> enemyTransfrom = new List&lt;Transform>();   //敌人位置</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> lifePoint<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//玩家生命值</span>
+    <span class="token keyword">public</span> string gameTime<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//玩家游戏时间，形如 00h00m00s</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> gameSec<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但是还没完。我用的是Time.time获取游戏时间，如果采用这种方法的话，加载存档之后，第一次保存是正确的，第二次及以后保存的时间累加了重复值，并不是真实游戏时间。</p>
 <p>解决方法是在PlayerController中维护一个变量preSaveTime<strong>（注意不是GameData）</strong>用于记录上一次保存时的Time.time，写入时的代码改成：</p>
-<pre class="line-numbers language-C#"><code class="language-C#">void Save() {
-    GameData gameData = GameLoad.LoadGame();
-    gameSec = (int)Time.time - preSaveTime + gameData.gameSec;
-    preSaveTime = (int)Time.time;
-    int hour = gameSec / 3600;
-    int min = (gameSec % 3600) / 60;
-    int sec = (gameSec % 3600) % 60;
-    gameTime = hour + " h " + min + " m " + sec + " s ";
-    GameSave.SaveGame();
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">Save</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    GameData gameData <span class="token operator">=</span> GameLoad<span class="token punctuation">.</span><span class="token function">LoadGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gameSec <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Time<span class="token punctuation">.</span>time <span class="token operator">-</span> preSaveTime <span class="token operator">+</span> gameData<span class="token punctuation">.</span>gameSec<span class="token punctuation">;</span>
+    preSaveTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Time<span class="token punctuation">.</span>time<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> hour <span class="token operator">=</span> gameSec <span class="token operator">/</span> <span class="token number">3600</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token punctuation">(</span>gameSec <span class="token operator">%</span> <span class="token number">3600</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> sec <span class="token operator">=</span> <span class="token punctuation">(</span>gameSec <span class="token operator">%</span> <span class="token number">3600</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    gameTime <span class="token operator">=</span> hour <span class="token operator">+</span> <span class="token string">" h "</span> <span class="token operator">+</span> min <span class="token operator">+</span> <span class="token string">" m "</span> <span class="token operator">+</span> sec <span class="token operator">+</span> <span class="token string">" s "</span><span class="token punctuation">;</span>
+    GameSave<span class="token punctuation">.</span><span class="token function">SaveGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>同时在Start中添加：</p>
-<pre class="line-numbers language-C#"><code class="language-C#">public void LoadGameData() {
-    GameData gameData = GameLoad.LoadGame();
-    if (gameData != null) {
-        transform.position = gameData.playerTransform;
-        lifePoint = gameData.lifePoint;
-        gameSec = gameData.gameSec;
-    }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="多个状态动画的灵活切换写法"><a href="#多个状态动画的灵活切换写法" class="headerlink" title="多个状态动画的灵活切换写法"></a>多个状态动画的灵活切换写法</h2><p>待完成</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">LoadGameData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    GameData gameData <span class="token operator">=</span> GameLoad<span class="token punctuation">.</span><span class="token function">LoadGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>gameData <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        transform<span class="token punctuation">.</span>position <span class="token operator">=</span> gameData<span class="token punctuation">.</span>playerTransform<span class="token punctuation">;</span>
+        lifePoint <span class="token operator">=</span> gameData<span class="token punctuation">.</span>lifePoint<span class="token punctuation">;</span>
+        gameSec <span class="token operator">=</span> gameData<span class="token punctuation">.</span>gameSec<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1514,7 +1498,7 @@ public class GameData
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">27.5k</span> 字
+                <span class="white-color">27.1k</span> 字
             
 
             
@@ -1706,5 +1690,5 @@ $(function () {
         <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
 
-    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
