@@ -6,10 +6,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="留言板, ZOU的博客">
+    <meta name="keywords" content="Unity脚本常用API, ZOU的博客">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="留言板 | ZOU的博客">
+    <meta name="description" content="0 小技巧通过Header，Tooltip和Space 属性来组织Inspector中的属性显示。
+0.1 Header[Header(&#34;This is a example&#34;)]
+十分常用，可以给属性添加标题
+0.2 Tooltip[Too">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>留言板 | ZOU的博客</title>
+    <title>Unity脚本常用API | ZOU的博客</title>
     <link rel="icon" type="image/png" href="/goldship.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -361,54 +364,267 @@
 
 </header>
 
-        <!-- shw2018 洪卫  modify 2019.08.15-->
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                <!-- 
-                    ZOU的博客
-                 -->
-                
-                    留言板
-                
-            </div>
-
-            <div class="description center-align">
-                
-                    Do the best, prepare for the worst.
-                    <!-- <span id="jinrishici-sentence">正在加载今日诗词...</span> -->
-                
-            </div>
-            
-            
-        </div>
-    </div>
-</div>
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
 </script>
 
 
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Unity脚本常用API
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<main class="content">
-    <div id="aboutme" class="container contact-container">
-            <div class="card">
-                    <div class="card-content">
-                            <div id="articleContent" data-aos="fade-up">
-                                    <h2 id="畅所欲言"><a href="#畅所欲言" class="headerlink" title="畅所欲言"></a>畅所欲言</h2><hr>
-<p>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链，一起交流学习！</p>
-<h2 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h2><hr>
-<p>洪卫の友链信息</p>
-<p>博客名称: 洪卫の博客</p>
-<p>博客网址: <a href="https://sunhwee.com" target="_blank" rel="noopener">https://sunhwee.com</a></p>
-<p>博客头像: <a href="http://sunhwee.com/hwsun.jpg" target="_blank" rel="noopener">http://sunhwee.com/hwsun.jpg</a></p>
-<p>博客介绍: UESTC  CVer！</p>
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Unity/" target="_blank">
+                                <span class="chip bg-color">Unity</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Unity/" class="post-category" target="_blank">
+                                Unity
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-06-14
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        ZOU
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        4 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="0-小技巧"><a href="#0-小技巧" class="headerlink" title="0 小技巧"></a>0 小技巧</h1><p>通过Header，Tooltip和Space 属性来组织Inspector中的属性显示。</p>
+<h2 id="0-1-Header"><a href="#0-1-Header" class="headerlink" title="0.1 Header"></a>0.1 Header</h2><p><code>[Header("This is a example")]</code></p>
+<p><strong>十分常用</strong>，可以给属性添加标题</p>
+<h2 id="0-2-Tooltip"><a href="#0-2-Tooltip" class="headerlink" title="0.2 Tooltip"></a>0.2 Tooltip</h2><p><code>[Tooltip("This is an another example")]</code></p>
+<p>可以给属性添加一段描述文字</p>
+<h2 id="0-3-Space"><a href="#0-3-Space" class="headerlink" title="0.3 Space"></a>0.3 Space</h2><p><code>[Space(int x)]</code></p>
+<p>添加空格</p>
+<h2 id="0-4-TextArea"><a href="#0-4-TextArea" class="headerlink" title="0.4 TextArea"></a>0.4 TextArea</h2><p><code>[TextArea]</code></p>
+<p>将单行文本框变为多行文本框</p>
+<h2 id="0-5-SerializeField"><a href="#0-5-SerializeField" class="headerlink" title="0.5 SerializeField"></a>0.5 SerializeField</h2><p><code>[SerializeField]</code></p>
+<p>可以将变量序列化，<strong>序列化的意思是说再次读取Unity时序列化的属性是有值的</strong>，不需要你再次去赋值，因为它已经被保存下来。</p>
+<p>凡是在Inspector窗口中显示的属性都具有Serialize功能，所以public属性默认具有Serialize功能。对于不在窗口显示的private和protected属性，可以在定义属性前添加上述代码，使其在Inspector窗口显示，具有序列化功能。</p>
+<h1 id="1-输入Input"><a href="#1-输入Input" class="headerlink" title="1 输入Input"></a>1 输入Input</h1><h2 id="1-1-GetAxis"><a href="#1-1-GetAxis" class="headerlink" title="1.1 GetAxis()"></a>1.1 GetAxis()</h2><p>根据按下按键返回<strong>-1~1</strong>之间的浮点值。使用这种方法控制人物移动，会有加速度。</p>
+<pre class="line-numbers language-c#"><code class="language-c#">movement.x = Input.GetAxis("Horizontal");
+movement.y = Input.GetAxis("Vertical");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="1-2-GetAxisRaw"><a href="#1-2-GetAxisRaw" class="headerlink" title="1.2 GetAxisRaw()"></a>1.2 GetAxisRaw()</h2><p>根据按下按键返回<strong>-1, 0, 1</strong>三者之一的整数值，正负代表方向。没有摩擦力时人物会平滑移动。</p>
+<pre class="line-numbers language-c#"><code class="language-c#">movement.x = Input.GetAxisRaw("Horizontal");
+movement.y = Input.GetAxisRaw("Vertical");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="1-3-GetKey"><a href="#1-3-GetKey" class="headerlink" title="1.3 GetKey()"></a>1.3 GetKey()</h2><p>当通过名称指定的按键被用户<strong>按住时</strong>返回true。按键可以通过KeyCode来获取，以下GetKey系列同理。</p>
+<h2 id="1-4-GetKeyDown"><a href="#1-4-GetKeyDown" class="headerlink" title="1.4 GetKeyDown()"></a>1.4 GetKeyDown()</h2><p>当通过名称指定的按键被用户<strong>按下的那一帧</strong>返回true。</p>
+<h2 id="1-5-GetKeyUp"><a href="#1-5-GetKeyUp" class="headerlink" title="1.5 GetKeyUp()"></a>1.5 GetKeyUp()</h2><p>当通过名称指定的按键被用户<strong>松开的那一帧</strong>返回true。</p>
+<h1 id="2-GameObject"><a href="#2-GameObject" class="headerlink" title="2 GameObject"></a>2 GameObject</h1><h2 id="2-1-Instantiate"><a href="#2-1-Instantiate" class="headerlink" title="2.1 Instantiate()"></a>2.1 Instantiate()</h2><p><a href="https://blog.csdn.net/qq_29413829/article/details/78934579" target="_blank" rel="noopener">详细戳我</a></p>
+<p>该函数是unity中进行实例化的函数，可以将original对象的所有子物体和子组件完全复制，成为一个新的对象，这个对象拥有和源对象完全一样的东西，包括坐标值等。总共有5个重载。</p>
+<ul>
+<li>original：源对象，用来复制操作的对象物体</li>
+<li>position：实例化的对象的位置坐标</li>
+<li>rotation：实例化的对象的旋转坐标（旋转四元数） </li>
+<li>parent：实例化对象的父对象，在完成实例化函数处理后，实例化对象将在父对象下，是父对象的子对象 </li>
+<li>instantiateWorldSpace：布尔变量，这个值为TRUE，表示实例化对象相对于世界坐标系的位置（是位置，不是坐标值，比如实例化前在Canvas左上角，实例化后还在左上角）不变，相对于父对象的坐标值变了。为false，表示实例化对象相对于父对象的坐标值不变，但在世界坐标系中的位置变了</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdn.net/20171229171822891?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjk0MTM4Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Instantiate函数"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdn.net/20171229171822891?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjk0MTM4Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Instantiate函数"> </p>
+<h2 id="2-2-Find"><a href="#2-2-Find" class="headerlink" title="2.2 Find()"></a>2.2 Find()</h2><p>通过名字或路径查找游戏对象</p>
+<pre class="line-numbers language-c#"><code class="language-c#">GameObject.Find("GameObject");
+GameObject.Find("GameObject/ChildGameObject);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>使用规范：</strong></p>
+<ol>
+<li><p>无法查找隐藏对象，隐藏对象包括查找路径的任何一个父节点隐藏(active=false)。</p>
+</li>
+<li><p>不可以跨场景查找。</p>
+</li>
+<li><p>如果查找不在最上层，建议合理使用路径查找，路径查找是把双刃剑。</p>
+</li>
+</ol>
+<p><strong>优点：</strong></p>
+<ol>
+<li>解决查找中可能出现的重名问题。</li>
+<li>如果有完全的路径，减少查找范围，减少查找时间。</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>路径或结构调整后，容易影响到程序中的查找，需要重新定位查找路径。</li>
+<li><strong>如果路径查找中的任何一个父节点active=false，这个对象都将查找不到</strong>。</li>
+<li>使用方便但效率低下，此查找相当于递归遍历查找，虽使用方便但效率堪忧，建议在Start()函数中查找对象并保存引用，<strong>切忌在Update()中动态查找。</strong></li>
+</ol>
+<h2 id="2-3-FindGameObjectWithTag"><a href="#2-3-FindGameObjectWithTag" class="headerlink" title="2.3 FindGameObjectWithTag"></a>2.3 FindGameObjectWithTag</h2><p>通过tag来查找gameobject，返回该场景中第一个匹配的对象。</p>
+<h2 id="2-4-FindGameObjectsWithTag"><a href="#2-4-FindGameObjectsWithTag" class="headerlink" title="2.4 FindGameObjectsWithTag"></a>2.4 FindGameObjectsWithTag</h2><p>通过tag来查找gameobject，返回一个数组，包含所有目标tag的gameobject。如果没有匹配的对象，则返回空。tag必须是存在的。</p>
+<h1 id="3-场景SceneManager"><a href="#3-场景SceneManager" class="headerlink" title="3 场景SceneManager"></a>3 场景SceneManager</h1><p>需要引入SceneManagement包：</p>
+<pre class="line-numbers language-c#"><code class="language-c#">using UnityEngine.SceneManagement;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="3-1-LoadScene"><a href="#3-1-LoadScene" class="headerlink" title="3.1 LoadScene()"></a>3.1 LoadScene()</h2><p><strong>该函数可以实现在多个场景之间切换，以加载上一个场景为例：</strong></p>
+<pre class="line-numbers language-c#"><code class="language-c#">SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>GerActiveScene().buildIndex</code>的意思是获取当前场景的编号，场景的前后顺序可以再Building Setting中更改，数值减一是加载上一个场景，如果要加载上一个场景的话就是加1了。</p>
+<h1 id="4-时间Time"><a href="#4-时间Time" class="headerlink" title="4 时间Time"></a>4 时间Time</h1><h2 id="4-1-Time-time"><a href="#4-1-Time-time" class="headerlink" title="4.1 Time.time"></a>4.1 Time.time</h2><p>获取当前时间，以秒为单位，游戏启动时开始计时。</p>
+<h2 id="4-2-Time-deltetime"><a href="#4-2-Time-deltetime" class="headerlink" title="4.2 Time.deltetime"></a>4.2 Time.deltetime</h2><p>一个极小的时间间隔，返回的是上一帧到这一帧两帧之间的时间间隔。通常使用在Update中，如果要在FixUpdate中使用的话，请换成fixedDalteTime。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -428,20 +644,48 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
             document.body.appendChild(img);
           });
       </script>
-                                </div>
-                    </div>
-                </div>
-                   
-                        
-        
-                        
-        
-                        
-        
-                        
-        
-                        
-                        <style>
+            </div>
+            <hr/>
+
+            
+
+            <!-- <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script> -->
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://yipeng.xyz" class="b-link-green">ZOU的博客</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2021/06/14/unity-jiao-ben-chang-yong-api/" class="b-link-green">Unity脚本常用API</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -738,10 +982,279 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
 //   }, 800)
 
 </script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/06/14/mian-xiang-dui-xiang-ji-chu/">
+                    <div class="card-image">
                         
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="面向对象基础">
+                        
+                        <span class="card-title">面向对象基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            说明该文章大部分内容来自以下开源博客：面向对象思想
+1 三大特性1.1 封装利用抽象数据类型将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体。内部的数据被隐藏了起来，外部只可以通过提供的接口访问数据。因此用户无需关心对象内部
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/面向对象/" class="post-category" target="_blank">
+                                    面向对象
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面向对象/" target="_blank">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                    <a href="/tags/设计原则/" target="_blank">
+                        <span class="chip bg-color">设计原则</span>
+                    </a>
+                    
+                    <a href="/tags/类的关系/" target="_blank">
+                        <span class="chip bg-color">类的关系</span>
+                    </a>
+                    
+                    <a href="/tags/三大特性/" target="_blank">
+                        <span class="chip bg-color">三大特性</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/14/unity-lian-shou-kong-dong-qi-shi-fu-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Unity练手-空洞骑士复刻">
+                        
+                        <span class="card-title">Unity练手-空洞骑士复刻</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            实用的工具ZealZeal的官网
+Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2），最大的好处是不需要联网，能随时查看（拯救断网大学生），查询速度也很快，对比很多服务器在国外的文档真的能节省很多时间。
+以我用它来
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Unity/" class="post-category" target="_blank">
+                                    Unity
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Unity/" target="_blank">
+                        <span class="chip bg-color">Unity</span>
+                    </a>
+                    
+                    <a href="/tags/HollowKnight/" target="_blank">
+                        <span class="chip bg-color">HollowKnight</span>
+                    </a>
+                    
+                    <a href="/tags/Zeal/" target="_blank">
+                        <span class="chip bg-color">Zeal</span>
+                    </a>
+                    
+                    <a href="/tags/序列化/" target="_blank">
+                        <span class="chip bg-color">序列化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: ZOU的博客<br />'
+            + '作者: ZOU<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
     </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
 </main>
+
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
         <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
