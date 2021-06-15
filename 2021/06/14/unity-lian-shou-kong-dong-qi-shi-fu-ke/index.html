@@ -667,7 +667,7 @@ using System<span class="token punctuation">.</span>Runtime<span class="token pu
 <p>​    </p>
 <h1 id="Unity游戏开发的合作模式"><a href="#Unity游戏开发的合作模式" class="headerlink" title="Unity游戏开发的合作模式"></a>Unity游戏开发的合作模式</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>准备阶段要做的工作很重要。</p>
 <p>需要一个主程将功能点清晰独立的分开，定义好global变量。如果正规，画好类图、流程图、计划好各功能模块之间的接口。</p>
-<p>搭建好场景，规定并且在Unity中配置好Layer和Tags，安装好要使用的Package。整理<strong>好项目文件，规定命名规则和使用规则</strong>。脚本，AudioMix，动画机等等必须按照功能分文件存储。</p>
+<p>搭建好场景，规定并且在Unity中配置好Layer和Tags，安装好要使用的Package。整理<strong>好项目文件，规定命名规则和使用规则</strong>。脚本，AudioMixer，动画机等等必须按照功能分文件存储。</p>
 <p>主程配置好项目后应该将项目文件分发给组员，组员在Unity Hub中导入该项目文件，在新电脑上Unity会自动完成上述配置。这种方式能确保没有遗漏。</p>
 <p>规定当完成一个GameObject的配置时，将其放入Prefabs文件夹中供其他人使用。</p>
 <h2 id="如何导入"><a href="#如何导入" class="headerlink" title="如何导入"></a>如何导入</h2><p> <strong>不同的程序员不要同时操作Unity的同一个Scene</strong>。项目合并可以通过Import Package和Export Package来完成。Import和Export会自动识别并合并项目中不同的文件，如果同名则新文件会覆盖旧文件。所以最好成员都在自己的Scene中工作。</p>
@@ -1690,5 +1690,5 @@ $(function () {
         <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
