@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Do the best, prepare for the worst.">
+    <meta name="author" content="ZOU">
+    
+    <title>
+        
+            UNITY练习笔记 |
+        
+        ZOU的博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/goldship.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/goldship_white.png","favicon":"/images/goldship.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Do not be sorry, be better."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/goldship.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                ZOU的博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">UNITY练习笔记</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/goldship_white.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZOU</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-06-14 12:34:31
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Unity/">Unity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Zeal/">Zeal</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">序列化与反序列化</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AF%B9%E8%B1%A1%E6%B1%A0/">对象池</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.4k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>17 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="实用的工具Zeal"><a href="#实用的工具Zeal" class="headerlink" title="实用的工具Zeal"></a>实用的工具Zeal</h1><p><a class="link"   target="_blank" rel="noopener" href="https://zealdocs.org/" >Zeal的官网<i class="fas fa-external-link-alt"></i></a></p>
+<p>Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2），最大的好处是不需要联网，能随时查看（拯救断网大学生），查询速度也很快，对比很多服务器在国外的文档真的能节省很多时间。</p>
+<p>以我用它来查unity3d的api文档的体验来说，比官网好太多了。</p>
+<p>此外绝大部分语言的API都可以查询，你就不需要在网页上开那么窗口了，浏览器可以解放出来查询一些比较有价值的问题（当一个程序员解决了一个bug时.gif）。</p>
+<p>缺点也是有的，最大的缺点就是只有英文，需要一定的英语阅读能力，可能代码写着写着就一转背单词了，建议搭配查词软件一起使用，不要翻译一整句话，遇到不会的单词再翻译而后自己理解，既学到了单词又保证了效率。</p>
+<p>还有一个缺点就是丑，不过可以通过自己写css代码导入来美化。</p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p>学习了unity中的代码周期，所有unity产生的c#脚本都会引用UnityEngine，所有的类都会继承自Monobehavior。c#中代码执行顺序并非像js一样自上而下，而有固定顺序，以下执行顺序为自顶向下：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://docs.unity3d.com/cn/2019.3/Manual/ExecutionOrder.html" >官方文档地址<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><p><code>awake()</code></p>
+</li>
+<li><p><code>OnEnable()</code></p>
+</li>
+<li><p><code>Start()</code></p>
+</li>
+<li><p><code>FixedUpdate()</code></p>
+</li>
+<li><p><code>OnTrigger() </code>系列</p>
+<ul>
+<li><code>OnTriggerEnter()</code>：触碰到trigger执行一次</li>
+<li><code>OnTriggerExit()</code>：离开trigger执行一次</li>
+<li><code>OnTriggerStay()</code>：触碰到trigger时每一帧执行一次</li>
+</ul>
+</li>
+<li><p><code>OnCollision()</code> 系列</p>
+<ul>
+<li><code>OnCollisionEnter()</code>：触碰到Collision执行一次</li>
+<li><code>OnCollisionExit()</code>：离开Collision执行一次</li>
+<li><code>OnCollisionStay()</code>：触碰到Collision时每一帧执行一次</li>
+</ul>
+</li>
+<li><p><code>OnMouseUp()</code></p>
+</li>
+<li><p><code>OnMouseDown()</code></p>
+</li>
+<li><p><code>Update()</code></p>
+</li>
+<li><p><code>LateUpdate()</code>（在这一帧刷新出来后执行）</p>
+</li>
+<li><p><code>OnGUI()</code></p>
+</li>
+<li><p><code>OnDestroy()</code></p>
+</li>
+</ul>
+<h1 id="序列化实现存储和加载游戏"><a href="#序列化实现存储和加载游戏" class="headerlink" title="序列化实现存储和加载游戏"></a>序列化实现存储和加载游戏</h1><p>游戏存档和读档的原理就是将游戏进行的数据保存在一个文件中。当重新载入游戏时，会首先读取这个文件，然后根据文件的数据动态创建游戏内容，让玩家得以从上次结束的地方重新开始。这给人的感觉就像是机器记住了游戏内容，其实并不，机器只是记住了一个游戏内容清单而已。</p>
+<h2 id="什么是序列化和反序列化"><a href="#什么是序列化和反序列化" class="headerlink" title="什么是序列化和反序列化"></a>什么是序列化和反序列化</h2><p>游戏存档和读档的原理就是将游戏进行的数据保存在一个文件中。当重新载入游戏时，会首先读取这个文件，然后根据文件的数据动态创建游戏内容，让玩家得以从上次结束的地方重新开始。这给人的感觉就像是机器记住了游戏内容，其实并不，机器只是记住了一个游戏内容清单而已。</p>
+<p>使用序列化需要添加头文件：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.Serialization.Formatters.Binary;   <span class="comment">//储存2进制文件</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>序列化：将对象转化成为字节流，如下图所示，对象可以是Unity中任意脚本或文件，事实上，当创建一个 MonoBehaviour 脚本时，Unity 会通过序列化/反序列化将文件转换成 C++ 代码，然后变成你在检查器窗口中看见的 c# 代码。 </p>
+<p><img src="https://gitee.com/miyu233/pic/raw/master/20211112115909.png"></p>
+</li>
+<li><p>反序列化：序列化的反面，将一个字节流转换成对象。</p>
+</li>
+<li><p>JSON：一种和语言无关的数据交换格式。 当进行 <strong>对象 to JSON</strong> 和 <strong>JSON to 对象</strong> 转换时，可以分别将这两种称作称作 <strong>JSON 序列化</strong> 和 <strong>JSON 反序列化</strong>。 </p>
+</li>
+</ul>
+<h3 id="1-游戏存档"><a href="#1-游戏存档" class="headerlink" title="1 游戏存档"></a>1 游戏存档</h3><p>新建一个游戏存档类GameData，取消MonoBehaviour继承。这个类用于存放游戏载入时应该加载的东西，即为前言所述<strong>游戏内容清单</strong>。</p>
+<p>有一句非常重要的代码<code>[System.Serializable]</code>需要添加在类声明之上。这是一个属性，它标明了代码的一个元数据。<strong>它告诉 Unity 这个类可以被序列化</strong>，这意味着你可以将它转换成字节流并保存到磁盘文件中。 </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GameData</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> Vector3 playerTransform;    <span class="comment">//玩家位置</span></span><br><span class="line">    <span class="comment">//public List&lt;Transform&gt; enemyTransfrom = new List&lt;Transform&gt;();   //敌人位置</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> lifePoint;   <span class="comment">//玩家生命值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> gameTime; <span class="comment">//玩家游戏时间，形如 00h00m00s</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> gameSec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-游戏保存"><a href="#2-游戏保存" class="headerlink" title="2 游戏保存"></a>2 游戏保存</h3><p>新建一个GameSave类，这个类提供一个静态方法<code>SaveGame()</code>，静态保证可以在其他类中调用。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GameSave</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SaveGame</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        GameData gameData = <span class="keyword">new</span> GameData();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> path = Application.persistentDataPath + <span class="string">&quot;/game_saveData&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断目录是否存在，不存在则创建</span></span><br><span class="line">        <span class="keyword">if</span> (!Directory.Exists(path)) &#123;</span><br><span class="line">            Directory.CreateDirectory(path);</span><br><span class="line">        &#125;</span><br><span class="line">        BinaryFormatter bf = <span class="keyword">new</span> BinaryFormatter();  <span class="comment">//二进制化</span></span><br><span class="line">        FileStream file = File.Create(path + <span class="string">&quot;/gameData.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取数据</span></span><br><span class="line">        PlayerController data = GameObject.Find(<span class="string">&quot;Knight&quot;</span>).GetComponent&lt;PlayerController&gt;();</span><br><span class="line">        gameData.lifePoint = data.lifePoint;</span><br><span class="line">        <span class="built_in">float</span> x = data.transform.position.x;</span><br><span class="line">        <span class="built_in">float</span> y = data.transform.position.y;</span><br><span class="line">        <span class="built_in">float</span> z = data.transform.position.z;</span><br><span class="line">        gameData.playerTransform = <span class="keyword">new</span> Vector3(x, y, z);</span><br><span class="line">        gameData.gameTime = data.gameTime;</span><br><span class="line">        gameData.gameSec = data.gameSec;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将二进制文件保存为JSON，使用二进制查看软件打开可看到具体数据</span></span><br><span class="line">        <span class="keyword">var</span> json = JsonUtility.ToJson(gameData);</span><br><span class="line"></span><br><span class="line">        bf.Serialize(file, json);    <span class="comment">//将二进制数据写入文件</span></span><br><span class="line">        file.Close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-游戏读取"><a href="#3-游戏读取" class="headerlink" title="3 游戏读取"></a>3 游戏读取</h3><p>新建一个游戏读取类GameLoad，提供一个静态方法<code>LoadGame()</code>，返回值是GameData类型，如果无数据则返回null。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GameLoad</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">public</span> GameData <span class="title">LoadGame</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        GameData gameData = <span class="keyword">new</span> GameData();</span><br><span class="line"></span><br><span class="line">        BinaryFormatter bf = <span class="keyword">new</span> BinaryFormatter();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> path = Application.persistentDataPath + <span class="string">&quot;/game_saveData/gameData.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (File.Exists(path)) &#123;</span><br><span class="line">            FileStream file = File.Open(path, FileMode.Open);</span><br><span class="line">            JsonUtility.FromJsonOverwrite((<span class="built_in">string</span>)bf.Deserialize(file), gameData);</span><br><span class="line">            file.Close();</span><br><span class="line">            <span class="keyword">return</span> gameData;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h2><p>最开始只在GameData中储存了一个string变量gameTIme，里面存放的是格式化后的游戏时间，形如 <strong>00h00m00s</strong>。</p>
+<p>出现的问题是，重新保存存档时，势必要知道上一次存档时的游戏时间，虽然可以用gameTime再转换回去，但是显然多存储一个总时间秒数更方便，于是又添加了一个int型变量gameSec。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">GameData</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> Vector3 playerTransform;    <span class="comment">//玩家位置</span></span><br><span class="line">    <span class="comment">//public List&lt;Transform&gt; enemyTransfrom = new List&lt;Transform&gt;();   //敌人位置</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> lifePoint;   <span class="comment">//玩家生命值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> gameTime; <span class="comment">//玩家游戏时间，形如 00h00m00s</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> gameSec;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>但是还没完。我用的是Time.time获取游戏时间，如果采用这种方法的话，加载存档之后，第一次保存是正确的，第二次及以后保存的时间累加了重复值，并不是真实游戏时间。</p>
+<p>解决方法是在PlayerController中维护一个变量preSaveTime<strong>（注意不是GameData）</strong>用于记录上一次保存时的Time.time，写入时的代码改成：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Save</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    GameData gameData = GameLoad.LoadGame();</span><br><span class="line">    gameSec = (<span class="built_in">int</span>)Time.time - preSaveTime + gameData.gameSec;</span><br><span class="line">    preSaveTime = (<span class="built_in">int</span>)Time.time;</span><br><span class="line">    <span class="built_in">int</span> hour = gameSec / <span class="number">3600</span>;</span><br><span class="line">    <span class="built_in">int</span> min = (gameSec % <span class="number">3600</span>) / <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">int</span> sec = (gameSec % <span class="number">3600</span>) % <span class="number">60</span>;</span><br><span class="line">    gameTime = hour + <span class="string">&quot; h &quot;</span> + min + <span class="string">&quot; m &quot;</span> + sec + <span class="string">&quot; s &quot;</span>;</span><br><span class="line">    GameSave.SaveGame();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同时在Start中添加：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LoadGameData</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    GameData gameData = GameLoad.LoadGame();</span><br><span class="line">    <span class="keyword">if</span> (gameData != <span class="literal">null</span>) &#123;</span><br><span class="line">        transform.position = gameData.playerTransform;</span><br><span class="line">        lifePoint = gameData.lifePoint;</span><br><span class="line">        gameSec = gameData.gameSec;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="对象池实现Dash残影效果"><a href="#对象池实现Dash残影效果" class="headerlink" title="对象池实现Dash残影效果"></a>对象池实现Dash残影效果</h1><h2 id="简单介绍一下对象池（Object-Pool）"><a href="#简单介绍一下对象池（Object-Pool）" class="headerlink" title="简单介绍一下对象池（Object Pool）"></a>简单介绍一下对象池（Object Pool）</h2><p>对象池是一种十分常见的游戏开发<strong>设计模式</strong>。</p>
+<p>该技术就是通过建立一个包含许多（待使用）对象的容器，提供对象的创建和销毁方法，按需取用，大大提升开发效率和资源占用。</p>
+<p>以一个形象的例子来比喻的话，打网球的人常常在口袋里揣两三个网球，这样就可以多打几轮而不用每次丢球都要去捡球。<strong>你可以把对象池想象成一个巨大的口袋，里面存放了很多网球，直到你口袋中所有球用完之前，你可以快乐很久</strong>。想象在宽阔的网球场捡球的疲惫样子，你大概就可以理解对象池给开发带来的便利。</p>
+<h2 id="对象池的具体好处"><a href="#对象池的具体好处" class="headerlink" title="对象池的具体好处"></a>对象池的具体好处</h2><p>当游戏中需要创建和销毁大量相同的物品时，如果使用Instantiate和Destory的方式来完成该需求时，会占用大量的系统资源，有可能导致内存溢出，进程崩溃。这个时候需要使用对象池。</p>
+<h2 id="对象池的实现"><a href="#对象池的实现" class="headerlink" title="对象池的实现"></a>对象池的实现</h2><p>该对象池的实现需要新建两个脚本：对象和池。</p>
+<ul>
+<li><p><strong>ShadowSprite（对象）</strong>：这个脚本用于控制Shadow对象的参数，例如不透明度，消失时间等等：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Header(<span class="meta-string">&quot;时间控制参数&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> activeTime;<span class="comment">//显示时间</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> activeStart; <span class="comment">//开始显示的时间点</span></span><br><span class="line"></span><br><span class="line">[<span class="meta">Header(<span class="meta-string">&quot;不透明度控制&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> alpha;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> alphaSet; <span class="comment">//初始值</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> alphaMultiplier;   <span class="comment">//递减参数</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>起始时要获取Player的Sprite，位置，大小和旋转角度（最后这个好像也无所谓，毕竟固定z轴）。</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnEnable</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    player = GameObject.FindGameObjectWithTag(<span class="string">&quot;Player&quot;</span>).transform;</span><br><span class="line">    thisSprite = GetComponent&lt;SpriteRenderer&gt;();</span><br><span class="line">    playerSprite = player.GetComponent&lt;SpriteRenderer&gt;();</span><br><span class="line"></span><br><span class="line">    alpha = alphaSet;</span><br><span class="line"></span><br><span class="line">    thisSprite.sprite = playerSprite.sprite;    <span class="comment">//拿到player的sprite</span></span><br><span class="line"></span><br><span class="line">    transform.position = player.position;   <span class="comment">//位置，省略this</span></span><br><span class="line">    transform.localScale = player.localScale;   <span class="comment">//大小</span></span><br><span class="line">    transform.rotation = player.rotation;   <span class="comment">//角度</span></span><br><span class="line"></span><br><span class="line">    activeStart = Time.time;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在Update中检测时间，如果到达activeTime，则返回对象池</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Time.time &gt; activeStart + activeTime) &#123;</span><br><span class="line">    <span class="comment">//返回对象池</span></span><br><span class="line">    ShadowPool.instance.ReturnPool(<span class="keyword">this</span>.gameObject);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>ShadowPool（对象池）：</strong></p>
+<ul>
+<li><p>采用队列储存对象，因为残影的特点是先出现的先到达activeTime，所以它会先回到对象池中，下面是c#定义队列的代码：</p>
+<ul>
+<li><code>Count</code>获取队列长度</li>
+<li><code>Enqueue()</code>进入队列</li>
+<li><code>Dequeue()</code>弹出队列</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Queue</span>&lt;<span class="title">GameObject</span>&gt; availableObjects</span> = <span class="keyword">new</span> Queue&lt;GameObject&gt;();</span><br></pre></td></tr></table></figure></li>
+<li><p>对象池的核心是提供对象的调用和返回，区别于普通的对象创建和删除，这里的调用和返回是通过<strong>SetActive</strong>实现：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ReturnPool</span>(<span class="params">GameObject obj</span>)</span> &#123;</span><br><span class="line">    obj.SetActive(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    availableObjects.Enqueue(obj);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> GameObject <span class="title">GetFromPool</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (availableObjects.Count == <span class="number">0</span>) FillPool();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> outShadow = availableObjects.Dequeue();</span><br><span class="line"></span><br><span class="line">    outShadow.SetActive(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> outShadow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>if (availableObjects.Count == 0) FillPool();</code></p>
+<p>如果对象池空了，那么就扩容。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<h1 id="Unity游戏开发的合作模式"><a href="#Unity游戏开发的合作模式" class="headerlink" title="Unity游戏开发的合作模式"></a>Unity游戏开发的合作模式</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>准备阶段要做的工作很重要。</p>
+<p>需要一个主程将功能点清晰独立的分开，定义好global变量。如果正规，画好类图、流程图、计划好各功能模块之间的接口。</p>
+<p>搭建好场景，规定并且在Unity中配置好Layer和Tags，安装好要使用的Package。整理<strong>好项目文件，规定命名规则和使用规则</strong>。脚本，AudioMixer，动画机等等必须按照功能分文件存储。</p>
+<p>主程配置好项目后应该将项目文件分发给组员，组员在Unity Hub中导入该项目文件，在新电脑上Unity会自动完成上述配置。这种方式能确保没有遗漏。</p>
+<p>规定当完成一个GameObject的配置时，将其放入Prefabs文件夹中供其他人使用。</p>
+<h2 id="如何导入"><a href="#如何导入" class="headerlink" title="如何导入"></a>如何导入</h2><p> <strong>不同的程序员不要同时操作Unity的同一个Scene</strong>。项目合并可以通过Import Package和Export Package来完成。Import和Export会自动识别并合并项目中不同的文件，如果同名则新文件会覆盖旧文件。所以最好成员都在自己的Scene中工作。</p>
+<p>代码冲突需要借助其他冲突解决工具进行逐行Merge，不能使用上述功能。</p>
+<h1 id="键盘按键轻重控制跳跃高低"><a href="#键盘按键轻重控制跳跃高低" class="headerlink" title="键盘按键轻重控制跳跃高低"></a>键盘按键轻重控制跳跃高低</h1><p>思路是取一个指标衡量按键轻重，通过这个值的变化来控制跳跃高低。</p>
+<p>这个指标可以是<strong>按键时间长短</strong>。这样需要注意的一个问题是：时长的统计不应该在按键松开时完成，而必须<strong>时刻判断当前距离按下跳跃键那个时刻过去了多久</strong>，如果Player的跳跃只有在松开时才进行那么会十分影响手感。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space)) &#123;</span><br><span class="line">    jumpStartTime = Time.time;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (Input.GetKey(KeyCode.Space)) &#123;</span><br><span class="line">    jumpTimer = Time.time - jumpStartTime;</span><br><span class="line">    <span class="keyword">if</span> (rb.gravityScale &gt; <span class="number">1.5</span>) &#123;</span><br><span class="line">        rb.gravityScale -= jumpTimer * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (rb.gravityScale &lt; <span class="number">1.5</span>) &#123;</span><br><span class="line">            rb.gravityScale = <span class="number">1.5f</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>目前采取的是控制重力的方式来控制跳跃力度，确实能实现功能，但是效果并不理想，高低的区分度不大，同时也会延长下落的时间，距离空洞骑士那种平滑的跳跃和下落还差的远。</p>
+<p><strong>控制加速度</strong>可能是个更好的选择。</p>
+<p>修改如下：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于记录按下跳跃键长短，控制跳跃高度</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MidAirJump</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space)) &#123;</span><br><span class="line">        jumpStartTime = Time.time;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (Input.GetKey(KeyCode.Space)) &#123;</span><br><span class="line">        jumpTimer = Time.time - jumpStartTime;</span><br><span class="line">        <span class="keyword">if</span> (jumpTimer &lt; <span class="number">0.1f</span> &amp;&amp; jumpTimer &gt; <span class="number">0.05f</span>) &#123;</span><br><span class="line">            rb.AddForce(<span class="keyword">new</span> Vector2(<span class="number">0f</span>, jumpHoldForce), ForceMode2D.Impulse);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将控制重力修改成了添加加速度，AddForce中填入一个二维的向量，分别表示在水平和竖直方向添加的加速度。ForceMode2D.Impulse是一种添加力的模式，这种模式的力就像是突然出现的一样。</p>
+<p><code>jumpTimer &gt; 0.5f</code>的原因是防止玩家不断地小按跳跃键，这样会导致Player可以不断获得一个向上的力，超越了二段跳。</p>
+<h1 id="如何实现技能冷却的UI设置"><a href="#如何实现技能冷却的UI设置" class="headerlink" title="如何实现技能冷却的UI设置"></a>如何实现技能冷却的UI设置</h1><p>在Image中选择<strong>Filled</strong>的Image Type，其中有一个选项叫做<strong>Fill Amout</strong>，这个选项可以实现让一张Image按选定的方式加载。<strong>Fill Method</strong>中选定加载方式，以<strong>Radial 360</strong>为例子（扇形加载）实现Dash技能的CD图标。</p>
+<ul>
+<li><p>在UI中新建一张image，Source image中选择一张图片</p>
+</li>
+<li><p>该image下新建一个子image，相同大小，相同位置，相同图标，<strong>颜色全黑</strong>，<strong>透明度调低</strong></p>
+</li>
+<li><p>对于该子image，image type选<strong>Filled</strong>，Method选<strong>Horizontal</strong>，Fill Origin选择<strong>Left</strong>， <strong>初始的Fill Amout改为0，表示技能可用</strong></p>
+</li>
+<li><p>在脚本中新建一个Image对象，将父image拖拽，在Update中写上一句核心代码（记住就好）：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdImage.fillAmount -= <span class="number">1.0f</span> / dashCoolDown * Time.deltaTime;</span><br></pre></td></tr></table></figure></li>
+<li><p>dashCoolDown表示冷却时间，该冷却条会在dashCoolDown时间内加载完成</p>
+</li>
+</ul>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="Sprite-和-UI-Image-的区别"><a href="#Sprite-和-UI-Image-的区别" class="headerlink" title="Sprite 和 UI Image 的区别"></a>Sprite 和 UI Image 的区别</h2><p>​    <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/coffeecato/article/details/78536488" >详细戳我<i class="fas fa-external-link-alt"></i></a></p>
+<ol>
+<li> 在Hierarchy窗口,你可以把sprites随便放在哪。然而，UI Images不得不放在canvas下面。你可以通过transform移动其他obejcts那样移动sprites,但是images使用RectTransform来在界面系统中移动。 </li>
+<li> 性能上有十分大的差别，如下两张图所示，Sprite会生成更复杂的网格，所以Sprite开销更大。  </li>
+</ol>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211128092447.png" style="zoom:67%;" />            
+
+ <img src="https://gitee.com/miyu233/pic/raw/master/20211128092508.png" style="zoom:67%;" />
+
+<p>注意使用 Image 和 Text 需要添加 <code>Using UnityEngine.UI</code>。</p>
+<h2 id="Trigger和Collider的区别"><a href="#Trigger和Collider的区别" class="headerlink" title="Trigger和Collider的区别"></a>Trigger和Collider的区别</h2><p>Collider有碰撞的效果， 可以调用 OnCollisionEnter/ Stay / Exit 函数，分别是碰撞进入 / 逗留 / 离开。</p>
+<p>Trigger 只是触发器，没有碰撞效果， 可以调用 OnTriggerEnter/ Stay / Exit 函数。分别是触发进入/ 逗留 /离开。 </p>
+<p>不可以同时发生碰撞和触发。</p>
+<h2 id="发生碰撞的必要条件"><a href="#发生碰撞的必要条件" class="headerlink" title="发生碰撞的必要条件"></a>发生碰撞的必要条件</h2><ol>
+<li>两个物体都必须带有碰撞盒。</li>
+<li>至少有一个物体带有Rigidbody组件。</li>
+<li>两个物体要发生相对位移。</li>
+</ol>
+<h2 id="动画系统中Trigger和Bool参数的区别"><a href="#动画系统中Trigger和Bool参数的区别" class="headerlink" title="动画系统中Trigger和Bool参数的区别"></a>动画系统中Trigger和Bool参数的区别</h2><p>Bool表示状态，当设置为true or false之后，不会自动回复原来的状态。</p>
+<p>而Trigger是一个触发器，当SetTrigger之后，会自动回复原来的状态。</p>
+<h2 id="Input修改"><a href="#Input修改" class="headerlink" title="Input修改"></a>Input修改</h2><p>通过<strong>Edit</strong> - <strong>Project Setting</strong> 可以修改Input绑定的值</p>
+<h2 id="Sprite很糊"><a href="#Sprite很糊" class="headerlink" title="Sprite很糊"></a>Sprite很糊</h2><blockquote>
+<p> 人物的 Sprite为什么看起来很模糊？</p>
+</blockquote>
+<p><strong>可能并不是因为分辨率过低造成的，反而是过高而导致的显示问题，不用管。</strong></p>
+<blockquote>
+<p>如何在同一帧内设置两张图片。例如人物挥刀时的挥刀动画和刀光的动画不能耦合在一起，如何让两种动画按指定方式显示？</p>
+</blockquote>
+<p><strong>可以在角色下建立不同的Game Object，在指定动画中选择Add Property-Is Active。该Object默认为关闭，当进行到关键帧时设置Active为true。</strong></p>
+<h2 id="Has-Exit-Time"><a href="#Has-Exit-Time" class="headerlink" title="Has Exit Time"></a>Has Exit Time</h2><ul>
+<li><p><strong>Inspector</strong>窗口中的<strong>Has Exit Time</strong>是指切换动画时是否要将当前动画播放完再切换，<strong>Exit Time</strong>的参数是指当前动画播放长度，0为不播放，1为完整播放</p>
+</li>
+<li><p>下方<strong>Transition Duration</strong>是指过渡动画所需要的时间，在该时间内，动画A和动画B同时开始计时（如果设置了Exit Time，则过了Exit Time之后B才开始计时），在该时间内，会先播放动画A，大概过了一半左右的时间，切换到动画B</p>
+</li>
+<li><p><strong>any state</strong>是一个始终存在特殊状态，如其字面意思，可以通过它让任意一个状态切换到某个状态。其中有一个<strong>Can Transition To Self</strong>的选项，意思为是否允许重置自身状态</p>
+</li>
+</ul>
+<h2 id="Can-Transition-to-Self"><a href="#Can-Transition-to-Self" class="headerlink" title="Can Transition to Self"></a>Can Transition to Self</h2><p>当使用Any state切换到Jump动画时出现了Jump动画只播放第一帧的情况，当将any state的Can Transition To Self选项取消后解决，推测原因是每一帧都进行了Jump to Jump的切换。Can Transition To Self 的意思是允许自己切换到自己。</p>
+<h2 id="Update和FixUpdate"><a href="#Update和FixUpdate" class="headerlink" title="Update和FixUpdate"></a>Update和FixUpdate</h2><p><strong>问题描述：</strong>发现有时二段跳手感有问题：</p>
+<ol>
+<li>当快速按下两次跳跃键时有很大概率无法触发二段跳</li>
+<li>下落时有时无法触发二段跳</li>
+</ol>
+<p><strong>修改方法：</strong></p>
+<ul>
+<li>将Movement()和CheckOnGround()函数放在FixUpdate中而不是Update中</li>
+</ul>
+<p><strong>原因分析：</strong></p>
+<ul>
+<li>一个老生常谈的问题，Update函数每一帧执行一次，FixUpdate函数每一秒执行50次。FixUpdate的诞生是为了解决Update在不同电脑上运行次数不同的缺陷。这种缺陷会导致GameObject的物理效果展现不自然，所以所有有关Rigidbody的代码都应该放在FixUpdate中</li>
+</ul>
+<h2 id="控制子动画播放"><a href="#控制子动画播放" class="headerlink" title="控制子动画播放"></a>控制子动画播放</h2><p>将要被叠加的动画所在的gameobject称作A，想要叠加上的动画所在的gameobject称为B，先将B设置为A的子gameobject。</p>
+<p>在A的<strong>Animation</strong>窗口中对于待叠加的动画选择<strong>Add Property</strong>，该选项可以控制子物体。</p>
+<p>确定具体的帧，控制B的<strong>is active</strong>，就可以控制其在某一帧的播放与否。</p>
+<ul>
+<li>修复了主角在空中攻击时二段跳无法切换二段跳动画的bug</li>
+<li>修复了在空中可能出现WalkStart的动画的bug</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：UNITY练习笔记</li>
+        <li>本文作者：ZOU</li>
+        <li>创建时间：2021-06-14 12:34:31</li>
+        <li>
+            本文链接：https://miyu233.gitee.io/2021/06/14/UNITY练习笔记/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/06/14/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">面向对象基础</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A8%A1%E6%9D%BF/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">设计模式模板</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'jEXEHGnftSiEiRI8jytn0J2G-gzGzoHsz',
+                    appKey: 'p53583YrHoqsDWkQP3bJxdpx',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '畅所欲言吧',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'ZOU';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ZOU</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7Zeal"><span class="nav-text">实用的工具Zeal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%AE%9E%E7%8E%B0%E5%AD%98%E5%82%A8%E5%92%8C%E5%8A%A0%E8%BD%BD%E6%B8%B8%E6%88%8F"><span class="nav-text">序列化实现存储和加载游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-text">什么是序列化和反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B8%B8%E6%88%8F%E5%AD%98%E6%A1%A3"><span class="nav-text">1 游戏存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B8%B8%E6%88%8F%E4%BF%9D%E5%AD%98"><span class="nav-text">2 游戏保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B8%B8%E6%88%8F%E8%AF%BB%E5%8F%96"><span class="nav-text">3 游戏读取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E6%97%B6%E9%95%BF"><span class="nav-text">游戏时长</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E5%AE%9E%E7%8E%B0Dash%E6%AE%8B%E5%BD%B1%E6%95%88%E6%9E%9C"><span class="nav-text">对象池实现Dash残影效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E5%AF%B9%E8%B1%A1%E6%B1%A0%EF%BC%88Object-Pool%EF%BC%89"><span class="nav-text">简单介绍一下对象池（Object Pool）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E7%9A%84%E5%85%B7%E4%BD%93%E5%A5%BD%E5%A4%84"><span class="nav-text">对象池的具体好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">对象池的实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E7%9A%84%E5%90%88%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="nav-text">Unity游戏开发的合作模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5"><span class="nav-text">如何导入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%AE%E7%9B%98%E6%8C%89%E9%94%AE%E8%BD%BB%E9%87%8D%E6%8E%A7%E5%88%B6%E8%B7%B3%E8%B7%83%E9%AB%98%E4%BD%8E"><span class="nav-text">键盘按键轻重控制跳跃高低</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%8A%80%E8%83%BD%E5%86%B7%E5%8D%B4%E7%9A%84UI%E8%AE%BE%E7%BD%AE"><span class="nav-text">如何实现技能冷却的UI设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sprite-%E5%92%8C-UI-Image-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">Sprite 和 UI Image 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trigger%E5%92%8CCollider%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">Trigger和Collider的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E7%94%9F%E7%A2%B0%E6%92%9E%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-text">发生碰撞的必要条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%E4%B8%ADTrigger%E5%92%8CBool%E5%8F%82%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">动画系统中Trigger和Bool参数的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input%E4%BF%AE%E6%94%B9"><span class="nav-text">Input修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sprite%E5%BE%88%E7%B3%8A"><span class="nav-text">Sprite很糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Has-Exit-Time"><span class="nav-text">Has Exit Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Can-Transition-to-Self"><span class="nav-text">Can Transition to Self</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update%E5%92%8CFixUpdate"><span class="nav-text">Update和FixUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%AD%90%E5%8A%A8%E7%94%BB%E6%92%AD%E6%94%BE"><span class="nav-text">控制子动画播放</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

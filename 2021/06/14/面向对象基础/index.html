@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Do the best, prepare for the worst.">
+    <meta name="author" content="ZOU">
+    
+    <title>
+        
+            面向对象基础 |
+        
+        ZOU的博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/goldship.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/goldship_white.png","favicon":"/images/goldship.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Do not be sorry, be better."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/goldship.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                ZOU的博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">面向对象基础</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/goldship_white.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZOU</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-06-14 12:37:50
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB/">类的关系</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/">三大特性</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>该文章大部分内容来自以下开源博客：<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3.md#%E5%A4%9A%E6%80%81" >面向对象思想<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="1-三大特性"><a href="#1-三大特性" class="headerlink" title="1 三大特性"></a>1 三大特性</h1><h2 id="1-1-封装"><a href="#1-1-封装" class="headerlink" title="1.1 封装"></a>1.1 封装</h2><p>利用抽象数据类型将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体。内部的数据被隐藏了起来，外部只可以通过提供的接口访问数据。因此用户无需关心对象内部的细节，同时也无从得知其内部的细节。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li><p>减少耦合：可以独立地开发、测试、优化、使用、理解和修改</p>
+</li>
+<li><p>减轻维护的负担：可以更容易被理解，并且在调试的时候不影响其他模块</p>
+</li>
+<li><p>有效地调节性能：可以通过剖析来确定哪些模块影响了系统的性能</p>
+</li>
+<li><p>提高软件的可重用性</p>
+</li>
+<li><p>降低了构建大型系统的风险：即使整个系统不可用，但是这些独立的模块却有可能是可用的</p>
+</li>
+</ul>
+<h2 id="1-2-继承"><a href="#1-2-继承" class="headerlink" title="1.2 继承"></a>1.2 继承</h2><p>继承实现了<strong>IS-A</strong>关系，例如Cat和Animal就是一种IS-A关系，Cat可以继承ziAnimal，从而获得Animal非private的属性和方法。</p>
+<p>继承应该遵循里氏替换原则。</p>
+<p>Cat可以当作Animal来使用，也就是说可以使用Animal引用Cat对象（这是一个十分常用的写法）。父类对象引用指向子类对象称为<strong>向上转型</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = <span class="keyword">new</span> Cat();</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-多态"><a href="#1-3-多态" class="headerlink" title="1.3 多态"></a>1.3 多态</h2><p>多态分为编译时多态和运行时多态：</p>
+<ul>
+<li><p>编译时多态主要指方法的重载（Overload），发生在一个类之内。常见的形式是重载多个构造函数，提供创建新对象时的方便。重载应该满足的条件是：</p>
+<ul>
+<li><p>函数名必须相同</p>
+</li>
+<li><p>参数列表必须不同（参数个数、数据类型、参数顺序）</p>
+</li>
+<li><p>函数的返回类型可以相同也可以不同</p>
+</li>
+<li><p>仅仅返回类型不同不足以称为重载</p>
+</li>
+</ul>
+</li>
+<li><p>运行时多态是指程序中定义的对象引用所指向的具体类型在运行期间才确定，具体实现有重写（Override），运行时多态有三个条件：</p>
+<ul>
+<li><p>继承</p>
+</li>
+<li><p>覆盖（重写）</p>
+</li>
+<li><p>向上转型</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="重写与重载的区别"><a href="#重写与重载的区别" class="headerlink" title="重写与重载的区别"></a>重写与重载的区别</h2><p>重载（Overload）实现的是编译时的多态性，重写（Overrid）实现的是运行时的多态性。重载发生在一个类中，同名的方法如果有不同的参数列表则视为重载；重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的参数列表，有兼容的返回类型。</p>
+<h1 id="2-六种关系"><a href="#2-六种关系" class="headerlink" title="2 六种关系"></a>2 六种关系</h1><h2 id="2-1-泛化关系"><a href="#2-1-泛化关系" class="headerlink" title="2.1 泛化关系"></a>2.1 泛化关系</h2><p>用来描述继承关系，在Java中使用extends关键字，uml写法如下：</p>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211112120138.png" style="zoom:50%;" />
+
+<h2 id="2-2-实现关系"><a href="#2-2-实现关系" class="headerlink" title="2.2 实现关系"></a>2.2 实现关系</h2><p>用来实现一个接口，在Java中使用implements关键字。</p>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211112120154.png" style="zoom:50%;" />
+
+<h2 id="2-3-聚合关系"><a href="#2-3-聚合关系" class="headerlink" title="2.3 聚合关系"></a>2.3 聚合关系</h2><p><strong>聚合是关联关系的一种特例</strong>，他体现的是整体与部分、拥有的关系，即<strong>has - a</strong>的关系，此时整体与部分之间是可分离的，他们可以具有各自的生命周期，部分可以属于多个整体对象，也可以为多个整体对象共享，比如计算机与CPU、公司与员工的关系等。表现在代码层面，和关联关系是一致的，只能从语义级别来区分。</p>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211112120210.png" style="zoom:50%;" />
+
+<h2 id="2-4-组合关系"><a href="#2-4-组合关系" class="headerlink" title="2.4 组合关系"></a>2.4 组合关系</h2><p><strong>组合也是关联关系的一种特例</strong>，他体现的是一种<strong>contains - a</strong>的关系，这种关系比聚合更强，也称为强聚合。他同样体现整体与部分间的关系，但此时整体与部分是不可分的，整体的生命周期结束也就意味着部分的生命周期结束，比如你和你的大脑，表现在代码层面，和关联关系是一致的，只能从语义级别来区分。</p>
+<p>以公司和部门为例子，如果公司没了，则部门就不存在了。</p>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211129011247.png" style="zoom:67%;" />
+
+<h2 id="2-5-关联关系"><a href="#2-5-关联关系" class="headerlink" title="2.5 关联关系"></a>2.5 关联关系</h2><p>关联关系体现的是两个类、或者类与接口之间语义级别的一种强依赖关系，比如我和我的朋友。这种关系比依赖更强、不存在依赖关系的偶然性、关系也不是临时性的，关系一般是平等的、关联可以是单向、双向的。表现在代码层面，为被关联类B以<strong>类属性</strong>的形式出现在关联类A中，也可能是关联类A引用了一个类型为被关联类B的全局变量。</p>
+<p>这是一种静态的关系，与运行过程的状态无关。可以用1对1、1对多，多对多这种关系来表示。举例来说，学校和学生就是一种关联关系，一个学校可以有很多学生，一个学生只能属于一个学校。这种关系在运行之前就可以确定。</p>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211129011305.png" style="zoom:67%;" />
+
+<h2 id="2-6-依赖关系"><a href="#2-6-依赖关系" class="headerlink" title="2.6 依赖关系"></a>2.6 依赖关系</h2><p>可以简单的理解，就是一个类A使用到了另一个类B，而这种使用关系是具有偶然性的、临时性的、非常弱的，但是B类的变化会影响到A。比如某人要过河，需要借用一条船，此时人与船之间的关系就是依赖。表现在代码层面，为类B作为参数被类A在某个<strong>method方法</strong>中使用。</p>
+<p>与关联关系不同的是，依赖关系是在运行过程中起作用的。A类和B类是依赖关系主要有三种形式：</p>
+<ul>
+<li><p>A类是B类方法的局部变量</p>
+</li>
+<li><p>A类是B类方法的参数</p>
+</li>
+<li><p>A类向B类发送消息，从而影响B类发生变化</p>
+</li>
+</ul>
+<img src="https://gitee.com/miyu233/pic/raw/master/20211112120315.png" style="zoom:50%;" />
+
+
+<h2 id="关系的耦合程度"><a href="#关系的耦合程度" class="headerlink" title="关系的耦合程度"></a>关系的耦合程度</h2><p>耦合程度排序：泛化 ≈ 实现 &gt; 组合 &gt; 聚合 &gt; 关联 &gt; 依赖。</p>
+<p>好的代码应该实现：<strong>高内聚，低耦合</strong>。</p>
+<h1 id="3-五种设计原则"><a href="#3-五种设计原则" class="headerlink" title="3 五种设计原则"></a>3 五种设计原则</h1><table>
+<thead>
+<tr>
+<th>简写</th>
+<th>全拼</th>
+<th>中文翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SRP</td>
+<td>The Single Responsibility Principle</td>
+<td>单一职责原则</td>
+</tr>
+<tr>
+<td><strong>OCP</strong></td>
+<td><strong>The Open Closed Principle</strong></td>
+<td><strong>开放封闭原则</strong></td>
+</tr>
+<tr>
+<td>LSP</td>
+<td>The Liskov Substitution Principle</td>
+<td>里氏替换原则</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>The Interface Segregation Principle</td>
+<td>接口分离原则</td>
+</tr>
+<tr>
+<td>DIP</td>
+<td>The Dependency Inversion Principle</td>
+<td>依赖倒置原则</td>
+</tr>
+</tbody></table>
+<h2 id="3-1-单一职责原则"><a href="#3-1-单一职责原则" class="headerlink" title="3.1 单一职责原则"></a>3.1 单一职责原则</h2><blockquote>
+<p>修改一个类的原因应该只有一个。</p>
+</blockquote>
+<p>一个类只负责一件事，当这个类需要做过多事情的时候，就需要分解这个类。</p>
+<p>如果一个类承担的职责过多，那么某个职责的变化可能会削弱这个类完成其他职责的能力。</p>
+<p>多职责会导致脆弱和不易理解的设计。</p>
+<h2 id="3-2-开放封闭原则"><a href="#3-2-开放封闭原则" class="headerlink" title="3.2 开放封闭原则"></a>3.2 开放封闭原则</h2><blockquote>
+<p>类应该对拓展开放，对修改关闭。</p>
+</blockquote>
+<p>该原则要求在添加新功能时可以新增，但是不能修改原代码。</p>
+<p>符合开闭原则最典型的例子就是装饰者模式，它可以动态地将责任附加在对象上，而不用去修改类的代码。</p>
+<p>实现OCP的主要机制是抽象和多态，LSP和DIP是OCP的基础。</p>
+<h2 id="3-3-里氏替换原则"><a href="#3-3-里氏替换原则" class="headerlink" title="3.3 里氏替换原则"></a>3.3 里氏替换原则</h2><blockquote>
+<p>子类对象必须能够替换掉所有父类对象。</p>
+</blockquote>
+<p>所有出现父类对象的地方将其换成子类都不会出问题。子类应该在实现父类的一切功能的基础上比父类更加特殊。</p>
+<p>LSP是多态顺利实现的保证，从而使OCP称为可能，因为正是子类型的可替换性才使得使用基类的模块在无需修改的情况下就可以拓展：</p>
+<ul>
+<li><p>增加或修改任何一个子类型，基类不用修改（封闭）</p>
+</li>
+<li><p>基类的使用者（客户程序）可以通过多态得到拓展或修改过的行为（开放）</p>
+</li>
+</ul>
+<h2 id="3-4-接口分离原则"><a href="#3-4-接口分离原则" class="headerlink" title="3.4 接口分离原则"></a>3.4 接口分离原则</h2><blockquote>
+<p>不应该强迫客户依赖于他们不用的方法。</p>
+</blockquote>
+<p>使用多个专门的接口比使用单一的总接口要好。</p>
+<h2 id="3-5-依赖倒置原则"><a href="#3-5-依赖倒置原则" class="headerlink" title="3.5 依赖倒置原则"></a>3.5 依赖倒置原则</h2><blockquote>
+<p>高层模块不应该依赖于低层模块，二者都应该依赖于抽象。<br>抽象不应该依赖于细节，细节应该依赖于抽象。</p>
+</blockquote>
+<p>按照自上而下的依赖关系，高层的策略设置模块往往是无法重用的，如果设法让高层模块独立于低层模块，则实现重用就变成可能。</p>
+<p><strong>面向接口编程：</strong>依赖倒置原则的启发式建议是“依赖于抽象”，具体做法是将高层需要的服务声明为抽象接口，高层使用这些接口，低层实现这些接口，使得高层不再依赖于底层，而是依赖于抽象接口，同样底层也依赖于抽象接口。</p>
+<p>依赖于抽象意味着：</p>
+<ul>
+<li><p>任何变量都不应该持有一个指向具体类的指针或者引用</p>
+</li>
+<li><p>任何类都不应该从具体类派生</p>
+</li>
+<li><p>任何方法都不应该重写它的任何基类中已经实现的方法</p>
+</li>
+</ul>
+<h1 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h1><h2 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h2><ul>
+<li><p>抽象类中可以有<strong>0～n</strong>个抽象方法，也可以有普通方法，接口中只能有抽象方法（JDK1.8之后允许有普通方法）。</p>
+</li>
+<li><p>抽象类定义之前必须有<strong>abstract</strong>修饰符，而接口不用class，用<strong>interface</strong>，其实这也说明了接口并不是类。</p>
+</li>
+<li><p>抽象类可以继承自抽象类，接口可以继承自接口，抽象类可以实现接口，但是接口不能实现接口。</p>
+</li>
+<li><p>抽象类中的成员变量和方法可以是各种类型的（public，protected，default，private），但抽象方法必须是protected or public（因为要给子类访问）。接口不能有变量，只能拥有常量（public static final），抽象方法必须为public（通用接口）。</p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：面向对象基础</li>
+        <li>本文作者：ZOU</li>
+        <li>创建时间：2021-06-14 12:37:50</li>
+        <li>
+            本文链接：https://miyu233.gitee.io/2021/06/14/面向对象基础/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/06/14/UNITY%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">UNITY练习笔记</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'jEXEHGnftSiEiRI8jytn0J2G-gzGzoHsz',
+                    appKey: 'p53583YrHoqsDWkQP3bJxdpx',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '畅所欲言吧',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'ZOU';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ZOU</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-text">1 三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%B0%81%E8%A3%85"><span class="nav-text">1.1 封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%BB%A7%E6%89%BF"><span class="nav-text">1.2 继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%A4%9A%E6%80%81"><span class="nav-text">1.3 多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">重写与重载的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%85%AD%E7%A7%8D%E5%85%B3%E7%B3%BB"><span class="nav-text">2 六种关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%B3%9B%E5%8C%96%E5%85%B3%E7%B3%BB"><span class="nav-text">2.1 泛化关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%AE%9E%E7%8E%B0%E5%85%B3%E7%B3%BB"><span class="nav-text">2.2 实现关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E8%81%9A%E5%90%88%E5%85%B3%E7%B3%BB"><span class="nav-text">2.3 聚合关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E7%BB%84%E5%90%88%E5%85%B3%E7%B3%BB"><span class="nav-text">2.4 组合关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB"><span class="nav-text">2.5 关联关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="nav-text">2.6 依赖关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E8%80%A6%E5%90%88%E7%A8%8B%E5%BA%A6"><span class="nav-text">关系的耦合程度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E4%BA%94%E7%A7%8D%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-text">3 五种设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99"><span class="nav-text">3.1 单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%BC%80%E6%94%BE%E5%B0%81%E9%97%AD%E5%8E%9F%E5%88%99"><span class="nav-text">3.2 开放封闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99"><span class="nav-text">3.3 里氏替换原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E6%8E%A5%E5%8F%A3%E5%88%86%E7%A6%BB%E5%8E%9F%E5%88%99"><span class="nav-text">3.4 接口分离原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99"><span class="nav-text">3.5 依赖倒置原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%86%E8%8A%82"><span class="nav-text">细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">抽象类和接口的区别</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
