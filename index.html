@@ -340,6 +340,189 @@ mjx-container[display="true"] + br {
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2022/03/18/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C/">
+                        医学图像分割网络
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        1 UNet1.1 结构与思路接下来介绍一种十分适用于医学影像分割的网络，UNet。
+首先来说明一下医学影像的特点，为什么UNet比较适合医学影像分割：
+
+医学影像语义比较简单，结构固定。但是也因此，无论是其低级特征还是高级语义特征都十分重要，所以U...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 18 2022 17:17:24 GMT+0800">2022-03-18</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                        </li>
+                    
+                    
+                        <li>
+                            &gt; 
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/">医学图像分割</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C/">分割网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/UNet/">UNet</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/VNet/">VNet</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/UNet/">UNet++</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/03/18/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E7%BD%91%E7%BB%9C/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/18/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96/">
+                        L2范数正则化
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        1 方法L2 范数是指向量对应元素平方和再开方，一般用来表示。
+L2 范数正则化等价于权重衰减。正则化通过为模型损失添加惩罚项使学出的模型参数值较小，是应对过拟合的常用手段。
+L2 范数正则化在模型原损失函数的基础上添加 L2 范数惩罚项，从而得到训...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 18 2022 17:17:13 GMT+0800">2022-03-18</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96/">L2范数正则化</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/03/18/L2%E8%8C%83%E6%95%B0%E6%AD%A3%E5%88%99%E5%8C%96/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/18/Dropout%E4%B8%A2%E5%BC%83%E6%B3%95/">
+                        Dropout丢弃法
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        1 方法除了 L2 范数正则化之外，Dropout 也是一种应对过拟合的方法。它只用于模型训练时期。
+假设一个单隐藏层的多层感知机。其中输入个数为 4，隐藏单元数为 5，隐藏单元 hi 的表达式为：其中是激活函数。当对该隐藏层使用 Dropout 时...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 18 2022 17:16:42 GMT+0800">2022-03-18</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Dropout/">Dropout</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/03/18/Dropout%E4%B8%A2%E5%BC%83%E6%B3%95/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2022/02/20/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
                         卷积神经网络基础
                     </a>
@@ -374,17 +557,7 @@ mjx-container[display="true"] + br {
                     
                         <li>
                             
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
                             <a href="/tags/CNN/">CNN</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/">医学图像分割</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -440,27 +613,27 @@ mjx-container[display="true"] + br {
                     
                         <li>
                             
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">基础算法</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
                             <a href="/tags/%E8%B4%AA%E5%BF%83/">贪心</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
+                            <a href="/tags/%E6%90%9C%E7%B4%A2/">搜索</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
                             <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%A0%91/">树</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">基础算法</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -541,8 +714,8 @@ mjx-container[display="true"] + br {
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/06/14/UNITY%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        UNITY练习笔记
+                    <a href="/2021/06/14/Unity%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        Unity练习笔记
                     </a>
                 </h3>
 
@@ -595,7 +768,7 @@ Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2）�
         
     </div>
 
-    <a href="/2021/06/14/UNITY%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2021/06/14/Unity%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -693,27 +866,27 @@ Zeal是一个离线API查看工具，支持205种文档（截止至2021/6/2）�
                     
                         <li>
                             
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E9%80%92%E5%BD%92/">递归</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
                             <a href="/tags/%E8%B4%AA%E5%BF%83/">贪心</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>&nbsp;
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                            <a href="/tags/%E6%A0%91/">树</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>&nbsp;
                         </li>
                     
                 </ul>
